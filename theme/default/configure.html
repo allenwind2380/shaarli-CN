@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="configure"}
+{include="includes"}
+</head>
+<body>
+{include="page.header"}
+<div class="container page-configure">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form method="POST" action="#" name="configform" id="configform" class="card">
+                <input type="hidden" name="token" value="{$token}"/>
+                <div class="card-title"><strong><font size="6">{'Configure your Shaarli'|t}</font></strong></div>
+                <div class="card-body">
+                    <div class="form-entry">
+                        <label for="title">Shaarli {'title'|t}</label>
+                        <input type="text" name="title" id="title" class="autofocus" size="50" value="{$title}" />
+                    </div>
+                    <div class="form-entry">
+                        <label for="titleLink">{'Home link'|t}</label>
+                        <input type="text" name="titleLink" id="titleLink" size="50" value="{$titleLink}">
+                        <div class="sublabel">{'Default value'|t}: {$base_path}/</div>
+                    </div>
+                    <div class="form-entry">
+                        <label for="theme">{'Theme'|t}</label>
+                        <select name="theme" id="theme">
+                        {loop="$theme_available"}
+                            <option value="{$value}" {if="$value === $theme"}selected{/if}>
+                                {$value|ucfirst}
+                            </option>
+                        {/loop}
+                        </select>
+                    </div>
+                    <div class="form-entry">
+                        <label for="theme">{'Description formatter'|t}</label>
+                        <select name="formatter" id="formatter">
+                        {loop="$formatter_available"}
+                            <option value="{$value}" {if="$value === $formatter"}selected="selected"{/if}>
+                              {$value|ucfirst}
+                            </option>
+                        {/loop}
+                        </select>
+                        <label for="language">{'Language'|t}</label>
+                        <select name="language" id="language">
+                        {loop="$languages"}
+                            <option value="{$key}" {if="$key === $language"}selected{/if}>
+                                {$value|ucfirst}
+                            </option>
+                        {/loop}
+                        </select>
+                    </div>
+                    <div class="form-entry">
+                        <label for="continent">{'Timezone'|t}</label>
+                        <div class="row">
+                            <div class="col-sm-6" id="timezone-continent">
+                                <select name="continent" id="continent">
+                                    {loop="$continents"}
+                                        {if="$key !== 'selected'"}
+                                            <option value="{$value}" {if="$continents.selected === $value"}selected{/if}>
+                                                {$value}
+                                            </option>
+                                        {/if}
+                                    {/loop}
+                                </select>
+                            </div>
+                            <div class="col-sm-6" id="timezone-city">
+                                <select name="city" id="city">
+                                    {loop="$cities"}
+                                        {if="$key !== 'selected'"}
+                                            <option value="{$value.city}" {if="$cities.selected === $value.city"}selected{/if} data-continent="{$value.continent}">
+                                                {$value.city}
+                                            </option>
+                                        {/if}
+                                    {/loop}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sublabel">{'Continent'|t} &middot; {'City'|t}</div>
+                    </div>
+                </div>
+
+
+
+                <div class="list-side-right">
+                    <div class="list-body">
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'Disable session cookie hijacking protection'|t}</div>
+                                <div class="list-item-sublabel">{'Check this if you get disconnected or if your IP address changes often'|t}</div>
+                            </div>
+                            <div class="list-item-side">
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" name="disablesessionprotection" id="disablesessionprotection" {if="$session_protection_disabled"}checked{/if}/>
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'Private links by default'|t}</div>
+                                <div class="list-item-sublabel">{'All new links are private by default'|t}</div>
+                            </div>
+                            <div class="list-item-side">
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" name="privateLinkByDefault" id="privateLinkByDefault" {if="$private_links_default"}checked{/if}/>
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'RSS direct links'|t}</div>
+                                <div class="list-item-sublabel">{'Check this to use direct URL instead of permalink in feeds'|t}</div>
+                            </div>
+                            <div class="list-item-side">
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" name="enableRssPermalinks" id="enableRssPermalinks" {if="$enable_rss_permalinks"}checked{/if}/>
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'Hide public links'|t}</div>
+                                <div class="list-item-sublabel">{'Do not show any links if the user is not logged in'|t}</div>
+                            </div>
+                            <div class="list-item-side">
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" name="hidePublicLinks" id="hidePublicLinks" {if="$hide_public_links"}checked{/if}/>
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'Automatically retrieve description for new bookmarks'|t}</div>
+                                <div class="list-item-sublabel">{'Shaarli will try to retrieve the description from meta HTML headers'|t}</div>
+                            </div>
+                            <div class="list-item-side">
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" name="retrieveDescription" id="retrieveDescription" {if="$retrieve_description"}checked{/if}/>
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'Check updates'|t}</div>
+                                <div class="list-item-sublabel">{'Notify me when a new release is ready'|t}</div>
+                            </div>
+                            <div class="list-item-side">
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" name="updateCheck" id="updateCheck" {if="$enable_update_check"}checked{/if}/>
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'Enable thumbnails'|t}</div>
+                                <div class="list-item-sublabel">
+                                    {if="! $gd_enabled"}
+                                        {'You need to enable the extension <code>php-gd</code> to use thumbnails.'|t}
+                                    {elseif="$thumbnails_enabled"}
+                                        <a href="{$base_path}/admin/thumbnails">{'Synchronize thumbnails'|t}</a>
+                                    {/if}
+                                </div>
+                            </div>
+                            <div class="list-item-side">
+                                <select name="enableThumbnails" id="enableThumbnails" class="align">
+                                    <option value="all" {if="$thumbnails_mode=='all'"}selected{/if}>
+                                        {'All'|t}
+                                    </option>
+                                    <option value="common" {if="$thumbnails_mode=='common'"}selected{/if}>
+                                        {'Only common media hosts'|t}
+                                    </option>
+                                    <option value="none" {if="$thumbnails_mode=='none'"}selected{/if}>
+                                        {'None'|t}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+						
+                        <div class="list-item">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'Enable REST API'|t}</div>
+                                <div class="list-item-sublabel">{'Allow third party software to use Shaarli such as mobile application'|t}</div>
+                            </div>
+                            <div class="list-item-side">
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" name="enableApi" id="enableApi" {if="$api_enabled"}checked{/if}/>
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+							<div class="form-entry">
+								<label for="apiSecret">{'API secret'|t}</label>
+								<input type="text" name="apiSecret" id="apiSecret" size="10" value="{$api_secret}" placeholder="任意字符..." />
+							</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" name="Save" class="button-raised button-primary pull-right">{'Save'|t}</button>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{include="page.footer"}
+</body>
+</html>

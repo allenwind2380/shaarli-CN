@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="dark"{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="picwall"}
+{include="includes"}
+</head>
+<body class="dark dark-toolbar">
+{include="page.header"}
+
+{if="count($linksToDisplay) === 0 && $is_logged_in"}
+  <div>
+      {'There is no cached thumbnail.'|t}
+      <a href="{$base_path}/admin/thumbnails">{'Try to synchronize them.'|t}</a>
+  </div>
+{/if}
+
+<div id="plugin_zone_start_picwall" class="plugin_zone">
+    {loop="$plugin_start_zone"}
+        {$value}
+    {/loop}
+</div>
+<div id="picwall_container text-center" class="clearfix">
+    {loop="$linksToDisplay"}
+    <div class="picwall-pictureframe ripple">
+	{ignore}RainTPL hack: put the 2 src on two different line to avoid path replace bug{/ignore}
+        <img data-src="{$root_path}/{$value.thumbnail}#" class="b-lazy"
+            src=""
+            alt="thumbnail" width="{$thumbnails_width}" height="{$thumbnails_height}" />
+        <a class="picwall-link" href="{$value.real_url}"><span class="info">{$value.title}</span></a>
+
+        {loop="$value.picwall_plugin"}
+            {$value}
+        {/loop}
+
+    </div>
+    {/loop}
+</div>
+<div id="plugin_zone_end_picwall" class="plugin_zone">
+    {loop="$plugin_end_zone"}
+        {$value}
+    {/loop}
+</div>
+<div class="clearfix"></div>
+{include="page.footer"}
+</body>
+</html>

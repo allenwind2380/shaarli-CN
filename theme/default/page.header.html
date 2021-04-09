@@ -1,0 +1,256 @@
+{$isCalledFromBookmarklet=array_key_exists('source', $_GET) && in_array($_GET['source'], array('bookmarklet'))}
+{$displayAddNewLinkIcon=(($is_logged_in || $openshaarli) && in_array($pageName, array('linklist', 'tools', 'tag.cloud', 'tag.list', 'picwall', 'daily')))}
+
+{if="$isCalledFromBookmarklet"}
+    {ignore} When called as a popup from bookmarklet, do not display menu. {/ignore}
+{else}
+    <div class="header-main container-fluid">
+        <div class="row">
+            <div class="col-lg-3 is-flex">
+                <a href="{$titleLink}" class="header-brand ripple">{$shaarlititle}</a>
+                <a href="#" class="icon-unfold hidden-lg ripple" title="Show/hide menu"><i class="mdi mdi-chevron-down"></i></a>
+            </div>
+            <div class="col-lg-6 header-middle">
+                <div class="header-nav">
+                    <div class="col-xs-6 col-sm-3 text-center">
+                        <a href="{$base_path}/tags/cloud" class="toolbar-link button-inverse ripple">{'Tag cloud'|t}</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 text-center">
+                        <a href="{$base_path}/picture-wall?{function="ltrim($searchcrits, '&')"}" class="toolbar-link button-inverse ripple">{'Picture wall'|t}</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 text-center">
+                        <a href="{$base_path}/daily" class="toolbar-link button-inverse ripple">{'Daily'|t}</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 text-center">
+                        <button class="toolbar-link button-inverse ripple" id="button-search">{'Search'|t}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="header-buttons">
+                    {if="isset($plugins_header.buttons_toolbar) ||isset($plugins_header.fields_toolbar)"}
+                        <div class="toolbar-button-container">
+                            <button type="button" class="icon-header popup-trigger ripple" data-popup="popup-plugin" title="More">
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </button>
+                            <div id="popup-plugin" class="popup popup-plugin hidden">
+                                <div class="popup-title">插件<button class="popup-close"><i class="mdi mdi-close"></i></button></div>
+                                <div class="popup-body">
+                                    {loop="$plugins_header.buttons_toolbar"}
+                                    <ul>
+                                        <li>
+                                            <a
+                                                {loop="$value.attr"}
+                                                    {$key}="{$value}"
+                                                {/loop}>
+                                                {$value.html}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    {/loop}
+                                    {loop="$plugins_header.fields_toolbar"}
+                                        <form class="popup-content-area"
+                                            {loop="$value.attr"}
+                                                {$key}="{$value}"
+                                            {/loop} >
+                                            {loop="$value.inputs"}
+                                                <input
+                                                    {loop="$value"}
+                                                        {$key}="{$value}"
+                                                    {/loop}>
+                                            {/loop}
+                                        </form>
+                                    {/loop}
+                                </div>
+                            </div>
+                        </div>
+                    {/if}
+                    {if="$is_logged_in"}
+                        <a href="{$base_path}/admin/logout" class="icon-header popup-trigger ripple" title="{'Logout'|t}">
+                            <i class="mdi mdi-logout"></i>
+                        </a>
+                        <a href="{$base_path}/admin/tools" class="icon-header ripple" title="{'Tools'|t}">
+                            <i class="mdi mdi-settings"></i>
+                        </a>
+                    {elseif="$openshaarli"}
+                        <a href="{$base_path}/admin/tools" class="icon-header ripple" title="{'Tools'|t}">
+                            <i class="mdi mdi-settings"></i>
+                        </a>
+                    {else}
+                        <a href="{$base_path}/login" class="icon-header popup-trigger ripple" title="{'Login'|t}">
+                            <i class="mdi mdi-account"></i>
+                        </a>
+                    {/if}
+                    <div class="toolbar-button-container">
+                        <button type="button" class="icon-header popup-trigger ripple" data-popup="popup-rss" title="{'RSS Feed'|t}">
+                            <i class="mdi mdi-rss"></i>
+                        </button>
+                        <div id="popup-rss" class="popup popup-rss hidden">
+                            <div class="popup-title">{'RSS Feed'|t}<button class="popup-close"><i class="mdi mdi-close"></i></button></div>
+                            <div class="popup-body">
+                                <ul>
+                                    <li><a href="{$base_path}/feed/{$feed_type}?{$searchcrits}" class="ripple">{'RSS URL'|t}</a></li>
+                                    <li><a href="{$base_path}/daily-rss?day" class="ripple" title="1 RSS entry per day">每日一览</a></li>
+                                    <li><a href="{$base_path}/daily-rss?week" class="ripple" title="1 RSS entry per day">每周纵览</a></li>
+                                    <li><a href="{$base_path}/daily-rss?month" class="ripple" title="1 RSS entry per day">每月博览</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {if="$is_logged_in && $pageName === 'linklist'"}
+                    <div class="toolbar-button-container">
+                        <button type="button" class="icon-header ripple batch-trigger" title="Select multiple links for deletion">
+                            <i class="mdi mdi-checkbox-marked-outline"></i>
+                        </button>
+                    </div>
+                    {/if}
+                    <div class="toolbar-button-container">
+                        {if="$pageName === 'linklist'"}
+                        <button type="button" class="popup-trigger icon-header ripple" data-popup="popup-filter" title="{'Filters'|t}">
+                            <i class="mdi mdi-filter"></i>
+                            {if="$visibility==='private' || $visibility==='public' || $untaggedonly"}<div class="red-dot"></div>{/if}
+                        </button>
+                        <div id="popup-filter" class="popup popup-filter hidden">
+                            <div class="popup-title">{'Filters'|t}<button class="popup-close"><i class="mdi mdi-close"></i></button></div>
+                            <div class="popup-body">
+                                <h2>{'Links per page'|t}</h2>
+                                <ul class="filters-links-per-page">
+                                    <li><a href="{$base_path}/links-per-page?nb=20" class="ripple {if="$links_per_page == 20"}is-bold{/if}">20 条</a></li>
+                                    <li><a href="{$base_path}/links-per-page?nb=50" class="ripple {if="$links_per_page == 50"}is-bold{/if}">50 条</a></li>
+                                    <li><a href="{$base_path}/links-per-page?nb=100" class="ripple {if="$links_per_page == 100"}is-bold{/if}">100条</a></li>
+                                </ul>
+                                <form method="get" action="{$base_path}/links-per-page" class="popup-content-area">
+                                    <label for="filter-nb">自定值...</label>
+                                    <input type="text" id="filter-nb" name="nb" placeholder="输入数字..." value="{$links_per_page}"/>
+                                </form>
+
+                                <h2>{'Filters'|t}</h2>
+                                <div class="list-side-right">
+                                    <div class="list-body">
+                                        {if="$is_logged_in"}
+                                        <div class="list-item">
+                                            <div class="list-item-content">
+                                                <div class="list-item-label">{'Only display private links'|t}</div>
+                                            </div>
+                                            <div class="list-item-side">
+                                                <div class="switch">
+                                                    <label data-url="{$base_path}/admin/visibility/private">
+                                                        <input type="checkbox" name="input-visibility-private" id="input-visibility-private" {if="$visibility==='private'"}checked{/if}/>
+                                                        <span class="lever"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item">
+                                            <div class="list-item-content">
+                                                <div class="list-item-label">{'Only display public links'|t}</div>
+                                            </div>
+                                            <div class="list-item-side">
+                                                <div class="switch">
+                                                    <label data-url="{$base_path}/admin/visibility/public">
+                                                        <input type="checkbox" name="input-visibility-public" id="input-visibility-public" {if="$visibility==='public'"}checked{/if}/>
+                                                        <span class="lever"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/if}
+                                        <div class="list-item">
+                                            <div class="list-item-content">
+                                                <div class="list-item-label">{'Filter untagged links'|t}</div>
+                                            </div>
+                                            <div class="list-item-side">
+                                                <div class="switch">
+                                                    <label data-url="{$base_path}/untagged-only">
+                                                        <input type="checkbox" name="input-untaggedonly" id="input-untaggedonly" {if="$untaggedonly"}checked{/if}/>
+                                                        <span class="lever"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {if="$displayAddNewLinkIcon"}
+        <a href="{$base_path}/admin/add-shaare" class="button-floating ripple">
+            <i class="icon-add-link mdi mdi-plus"></i>
+        </a>
+    {/if}
+    <form id="hidden-tag-form" class="hidden" method="GET" name="tagfilter" action="{$base_path}/">
+        <input type="hidden" name="searchtags" id="tagfilter_value" value=""/>
+    </form>
+
+    <div class="notifications">
+      {if="!empty($plugin_errors) && $is_logged_in"}
+        {loop="plugin_errors"}
+            <div class="notification is-danger">
+              <button class="notification-close"><i class="mdi mdi-close"></i></button>
+              {$value}
+            </div>
+        {/loop}
+      {/if}
+
+      {if="!empty($global_errors)"}
+        {loop="global_errors"}
+            <div class="notification is-danger">
+              <button class="notification-close"><i class="mdi mdi-close"></i></button>
+              {$value}
+            </div>
+        {/loop}
+      {/if}
+
+      {if="!empty($global_warnings)"}
+        {loop="global_warnings"}
+            <div class="notification is-warning">
+              <button class="notification-close"><i class="mdi mdi-close"></i></button>
+              {$value}
+            </div>
+        {/loop}
+      {/if}
+
+      {if="!empty($global_successes)"}
+        {loop="global_successes"}
+            <div class="notification is-success">
+              <button class="notification-close"><i class="mdi mdi-close"></i></button>
+              {$value}
+            </div>
+        {/loop}
+      {/if}
+    </div>
+{/if}
+
+<div id="search-overlay" class="fullscreen hidden">
+    <div class="content-fullscreen">
+        <div class="container">
+            <div class="mbl row">
+                <form method="get" action="{$base_path}/" id="form-search" class="col-md-8 col-md-offset-2">
+                    <div class="search-field">
+                        <input type="search" id="searchform_value" class="input-big" name="searchterm"
+                            value="{if="isset($search_type)"}{if="$search_type=='fulltext'"}{$search_crits}{elseif="$search_type=='tags'"}{loop="$search_crits"}{$value} {/loop}{else}{/if}{/if}"
+                            placeholder="找点什么..." autocomplete="off" data-multiple data-minChars="1"
+                            data-list="{loop="$tags"}{$key}, {/loop}" />
+                        <div class="search-overlay-actions">
+                            <button type="button" id="button-filter" class="button-raised ripple ripple-primary">
+                                <i class="visible-xs mdi mdi-tag-multiple"></i>
+                                <span class="hidden-xs"><i class="mdi mdi-magnify"></i>{'tags'|t}</span>
+                            </button>
+                            <button type="submit" id="button-search" class="button-raised button-primary ripple">
+                                <i class="mdi mdi-magnify"></i>
+                                <span class="hidden-xs">{'search'|t}</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="overlay" class="overlay hidden"></div>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="pluginsadmin"}
+{include="includes"}
+</head>
+<body>
+{include="page.header"}
+<div id="pluginadmindiv" class="page-pluginadmin container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <noscript>
+                <p>{'You need to enable Javascript to change plugin loading order.'|t}</p>
+            </noscript>
+
+            <h1>{'Plugin administration'|t}</h1>
+            <p>拖动你的插件来改变执行优先顺序, 取消选中已启用插件以禁用它们</p>
+
+            <form action="{$base_path}/admin/plugins" method="post">
+                <input type="hidden" name="token" value="{$token}">
+                <section class="card">
+                    <div class="card-title">{'Enabled Plugins'|t}</div>
+                    {if="count($enabledPlugins)==0"}
+                    <div class="card-body">
+                        <p>{'No plugin enabled.'|t}</p>
+                    </div>
+                    {else}
+                    <ul id="list-plugin-enabled" class="list-sortable list-checkable">
+                        {loop="$enabledPlugins"}
+                        <li class="list-item list-item-sortable" data-line="{$key}" data-order="{$counter}">
+                            <input type="checkbox" class="filled-in" name="{$key}" id="checkbox-{$key}" checked>
+                            <label for="checkbox-{$key}"></label>
+                            <input type="hidden" name="order_{$key}" value="{$counter}">
+                            <div class="list-item-content">
+                                <h3 class="list-item-label">{function="str_replace('_', ' ', $key)"}</h3>
+                                <div class="list-item-sublabel">{$value.description}</div>
+                            </div>
+                            <div class="list-sortable-handle mdi mdi-menu"></div>
+                        </li>
+                        {/loop}
+                    </ul>
+                    {/if}
+                </section>
+
+                <section class="card">
+                    <div class="card-title">未启用插件</div>
+                    {if="count($disabledPlugins)==0"}
+                    <div class="card-body">
+                        <p>{'No plugin disabled.'|t}</p>
+                    </div>
+                    {else}
+                    <ul class="list-sortable list-checkable">
+                        {loop="$disabledPlugins"}
+                        <li class="list-item list-item-sortable" data-line="{$key}" data-order="{$counter}">
+                            <input type="checkbox" class="filled-in" id="checkbox-{$key}" name="{$key}">
+                            <label for="checkbox-{$key}"></label>
+                            <div class="list-item-content">
+                                <h3 class="list-item-label">{function="str_replace('_', ' ', $key)"}</h3>
+                                <div class="list-item-sublabel">{$value.description}</div>
+                            </div>
+                        </li>
+                        {/loop}
+                    </ul>
+                    {/if}
+                </section>
+
+                <div class="clearfix">
+                    <p>
+                        {"More plugins available"|t}
+                        <a href="{$root_path}/doc/html/Community-&-Related-software/#third-party-plugins">{"in the documentation"|t}</a>.
+                    </p>
+                    <button type="submit" class="button-raised button-primary pull-right">应用</button>
+                </div>
+            </form>
+            <hr class="darker">
+            <form action="{$base_path}/admin/plugins" method="post">
+                <input type="hidden" name="token" value="{$token}">
+                <section class="card">
+                    <div class="card-title">插件参数</div>
+                    <div class="card-body">
+                    {if="count($enabledPlugins)==0"}
+                        <p>{'No plugin enabled.'|t}</p>
+                    {else}
+                        {$count=0}
+                        {loop="$enabledPlugins"}
+                            {if="count($value.parameters) > 0"}
+                                {if="$count>0"}
+                                <hr>
+                                {/if}
+                                {$count=$count+1}
+                                <h2>{function="str_replace('_', ' ', $key)"}</h2>
+                                {loop="$value.parameters"}
+                                <div class="row plugin-param">
+                                    <div class="col-sm-4 plugin-param-key">
+                                        <label for="{$key}" {if="isset($value.desc)"}title="{$value.desc}"{/if}>{function="str_replace('_', ' ', $key)"}</label>
+                                        {if="isset($value.desc)"}<div class="sublabel">{$value.desc}</div>{/if}
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <input type="text" name="{$key}" value="{$value.value}" id="{$key}" {if="isset($value.desc)"}placeholder="{$value.desc}"{/if}>
+                                    </div>
+                                </div>
+                                {/loop}
+                            {/if}
+                        {/loop}
+                        {if="$count==0"}
+                        <p>{'No parameter available.'|t}</p>
+                        {/if}
+                    {/if}
+                    </div>
+                    <div class="card-footer clearfix">
+                        <button type="submit" name="parameters_form" class="button-raised button-primary pull-right">保存参数</button>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </div>
+</div>
+{include="page.footer"}
+</body>
+</html>

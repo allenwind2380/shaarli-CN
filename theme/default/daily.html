@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="daily"}
+{include="includes"}
+</head>
+<body class="dark-toolbar">
+{include="page.header"}
+
+<div class="subheader is-dark">
+    <div class="container text-center">
+        <a class="button-inverse button-default{if="array_key_exists('day', $_GET) || (!array_key_exists('week', $_GET) && !array_key_exists('month', $_GET))"} active{/if}" href="{$base_path}/daily?day" title="{'Daily'|t}">{'Daily'|t}</a>
+        <a class="button-inverse button-default{if="array_key_exists('week', $_GET)"} active{/if}" href="{$base_path}/daily?week" title="{'Weekly'|t}">{'Weekly'|t}</a>
+        <a class="button-inverse button-default{if="array_key_exists('month', $_GET)"} active{/if}" href="{$base_path}/daily?month" title="{'Monthly'|t}">{'Monthly'|t}</a>
+    </div>
+</div>
+
+
+<div class="daily">
+    <div id="plugin_zone_start_picwall" class="plugin_zone">
+         {loop="$plugin_start_zone"}
+             {$value}
+         {/loop}
+    </div>
+
+    <div class="daily-header">
+        <h1>{$localizedType}</h1>
+        <p class="daily-header-subtitle">{function="t('All links of one :type in a single page.', '', 1, 'shaarli', [':type' => t($type)])"}</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <a {if="$previousday"}href="{$base_path}/daily?{$type}={$previousday}"{else}href="#"{/if} class="button" {if="!$previousday"}disabled{/if}>
+                        <i class="mdi mdi-arrow-left"></i> {function="t('Previous :type', '', 1, 'shaarli', [':type' => t($type)], true)"}
+                    </a>
+                </div>
+                <div class="col-xs-6">
+                    <a {if="$nextday"}href="{$base_path}/daily?{$type}day={$nextday}"{else}href="#"{/if} class="button" {if="!$nextday"}disabled{/if}>
+                        {function="t('Next :type', '', 1, 'shaarli', [':type' => t($type)], true)"} <i class="mdi mdi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="darker">
+        </div>
+    </div>
+
+    <h2 class="daily-title">{$dayDesc}</h2>
+
+    <div id="plugin_zone_about_daily" class="plugin_zone">
+    {loop="$daily_about_plugin"}
+        {$value}
+    {/loop}
+    </div>
+
+    {if="$linksToDisplay"}
+        <div class="daily-grid clearfix" data-columns>
+        {loop="$linksToDisplay"}
+        {$link=$value}
+            <div class="daily-item">
+                <div class="daily-card">
+                    <a href="{$link.real_url}" class="daily-item-header ripple ripple-primary">
+                        {$link.title}
+                    </a>
+
+                    {if="$thumbnails_enabled && !empty($link.thumbnail)"}
+                        <div class="daily-item-image" style="background-image: url({$root_path}/{$link.thumbnail}#)"></div>
+                    {/if}
+
+                    {if="$link.formatedDescription"}
+                    <div class="daily-item-body">
+                        {$link.formatedDescription}
+                    </div>
+                    {/if}
+                    <div class="daily-item-footer clearfix">
+                        {if="!$hide_timestamps || $is_logged_in"}
+                        <a href="{$base_path}/shaare/{$value.shorturl}" class="daily-item-footer-subtitle" title="{'Permalink'|t}">
+                            {if="$type === 'week'"}
+                                {function="strftime('%b %e | %H:%M | %a', $link.timestamp)"}
+                            {else}
+                                {if="$type === 'month'"}
+                                    {function="strftime('%Y %b %e | %H:%M | %a', $link.timestamp)"}
+                                {else}
+                                    {function="strftime('%H:%M', $link.timestamp)"}
+                                {/if}
+                            {/if}
+                        </a>
+                        {/if}
+                        {if="$link.tags"}
+                        <div class="daily-item-tags">
+                            {$tags=implode(', ', $link['taglist'])}
+                            {$tags}
+                        </div>
+                        {/if}
+                        <div>
+                        {loop="$link.link_plugin"}
+                            {$value}
+                        {/loop}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {/loop}
+        </div>
+    {else}
+        <div>无文章更新</div>
+    {/if}
+
+    <div id="plugin_zone_end_picwall" class="plugin_zone">
+        {loop="$plugin_end_zone"}
+            {$value}
+        {/loop}
+    </div>
+</div>
+{include="page.footer"}
+</body>
+</html>

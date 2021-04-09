@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="import"}
+{include="includes"}
+</head>
+<body>
+{include="page.header"}
+<div id="uploaddiv" class="container page-import">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<form method="post" action="{$base_path}/admin/import" enctype="multipart/form-data" name="uploadform" id="uploadform" class="card">
+				<input type="hidden" name="token" value="{$token}">
+				<input type="hidden" name="MAX_FILE_SIZE" value="{$maxfilesize}">
+				<div class="card-title">{"Import Database"|t}</div>
+				<div class="card-body">
+					<p>{'Import Netscape HTML bookmarks (as exported from Firefox, Chrome, Opera, delicious...)'|t}</p>
+					<div class="form-entry">
+						<label for="filetoupload">上传HTML文件</label>
+						<input type="file" id="filetoupload" name="filetoupload" class="autofocus"/>
+						<div class="sublabel">{'Maximum size allowed:'|t} <strong>{$maxfilesizeHuman}</strong></div>
+					</div>
+					<div class="form-entry">
+						<input type="checkbox" class="filled-in" name="overwrite" id="overwrite">
+						<label for="overwrite">{'Overwrite existing bookmarks'|t}</label>
+					</div>
+				</div>
+
+				<div class="list-side-right">
+                    <div class="list-body">
+						<div class="list-item">
+                            <label class="list-item-content" for="privacy-default">
+                                <div class="list-item-label">🖇 默认</div>
+                                <div class="list-item-sublabel">{'Use values from the imported file, default to public'|t}</div>
+                            </label>
+                            <div class="list-item-side">
+                                <input name="privacy" class="with-gap" type="radio" value="default" id="privacy-default" checked />
+                                <label for="privacy-default"></label>
+                            </div>
+                        </div>
+                        <div class="list-item no-border">
+                            <label class="list-item-content" for="privacy-private">
+                                <div class="list-item-label">🔒 私人</div>
+                                <div class="list-item-sublabel">{'Import all bookmarks as private'|t}</div>
+                            </label>
+                            <div class="list-item-side">
+                                <input name="privacy" class="with-gap" type="radio" value="private" id="privacy-private" />
+                                <label for="privacy-private"></label>
+                            </div>
+                        </div>
+                        <div class="list-item no-border">
+                            <label class="list-item-content" for="privacy-public">
+                                <div class="list-item-label">📢 公共</div>
+                                <div class="list-item-sublabel">{'Import all bookmarks as public'|t}</div>
+                            </label>
+                            <div class="list-item-side">
+                                <input name="privacy" class="with-gap" type="radio" value="public" id="privacy-public" />
+                                <label for="privacy-public"></label>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="form-entry">
+		                        <label for="default-tags">{'Add default tags'|t}</label>
+		                        <input type="text" name="default_tags" id="default-tags" placeholder="逗号分隔标签...">
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+
+				<div class="card-footer">
+					<button type="submit" name="import_file" class="button-raised button-primary pull-right">{'Import'|t}</button>
+					<div class="clearfix"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{include="page.footer"}
+</body>
+</html>

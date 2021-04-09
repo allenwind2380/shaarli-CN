@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="tag.cloud"}
+{include="includes"}
+</head>
+<body>
+{include="page.header"}
+
+{include="tag.sort"}
+
+<div class="center container">
+    <div id="plugin_zone_start_tagcloud" class="plugin_zone">
+        {loop="$plugin_start_zone"}
+            {$value}
+        {/loop}
+    </div>
+    <div id="cloudtag">
+        {loop="$tags"}
+            <a href="{$base_path}/?searchtags={$tags_url.$key1}{$tags_separator|urlencode}{$search_tags_url}" style="font-size:{$value.size}em;">{$key}</a
+            ><span class="link-tag"><a href="{$base_path}/add-tag/{$tags_url.$key1}" title="{'Filter by tag'|t}" class="count">{$value.count}</a></span>
+            {loop="$value.tag_plugin"}
+                {$value}
+            {/loop}
+        {/loop}
+    </div>
+    <div id="plugin_zone_end_tagcloud" class="plugin_zone">
+        {loop="$plugin_end_zone"}
+            {$value}
+        {/loop}
+    </div>
+</div>
+{include="page.footer"}
+</body>
+</html>

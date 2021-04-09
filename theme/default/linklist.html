@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="linklist"}
+{include="includes"}
+</head>
+<body>
+{include="page.header"}
+
+{$dateFormat=!empty($conf->get('config.MATERIAL_PHP_DATE_PATTERN')) ? $conf->get('config.MATERIAL_PHP_DATE_PATTERN') : '%c'}
+{$qrCodeDisabled=!empty($conf->get('config.MATERIAL_NO_QRCODE')) ? $conf->get('config.MATERIAL_NO_QRCODE') : false}
+
+<div id="linklist" class="container">
+    {loop="$plugin_start_zone"}
+         {$value}
+    {/loop}
+
+    {include="linklist.paging"}
+
+    {if="count($links)==0"}
+        <div class="text-center">
+            <img src="{$asset_path}/dist/img/sad_star.png#" alt="Nothing found" />
+        </div>
+        <div class="nothing-found">这...{if="!empty($search_term)"}有关<strong>{$search_term}</strong>啥都没找到{/if}{if="!empty($search_tags)"}{$exploded_tags=explode(' ', $search_tags)}没有搜索到带 <strong>{loop="$exploded_tags"} {$value}{/loop}</strong>标签的{/if}</div>
+    {elseif="!empty($search_term) or !empty($search_tags) or !empty($visibility) or $untaggedonly"}
+        <div id="searchcriteria">
+            {function="sprintf(t('%s result', '%s results', $result_count), $result_count)"}
+            {if="!empty($search_term)"} {'for'|t} <strong>{$search_term}</strong>{/if}
+            {if="!empty($search_tags)"}{$exploded_tags=tags_str2array($search_tags, $tags_separator)} {'tagged'|t} <i>
+            {loop="$exploded_tags"}
+                <a href="{$base_path}/remove-tag/{function="urlencode($value)"}" class="link-tag-filter" title="{'Remove tag'|t}">{$value}&nbsp;
+                    <span class="remove">&#x2715;</span>
+                </a>
+            {/loop}
+            </i>
+            {/if}
+            {if="!empty($visibility)"}
+                {'with status'|t}
+                <strong>
+                    {$visibility|t}
+                </strong>
+            {/if}
+            {if="$untaggedonly"}
+                <strong>
+                    {'without any tag'|t}
+                </strong>
+            {/if}
+        </div>
+    {/if}
+
+    <div class="links-list">
+
+        {ignore}Set translation here, for performances{/ignore}
+        {$strPrivate=t('Private')}
+        {$strEdit=t('Edit')}
+        {$strDelete=t('Delete')}
+        {$strFold=t('Fold')}
+        {$strEdited=t('Edited: ')}
+        {$strPermalink=t('Permalink')}
+        {$strPermalinkLc=t('permalink')}
+        {$strAddTag=t('Add tag')}
+        {$strToggleSticky=t('Toggle sticky')}
+        {$strSticky=t('Sticky')}
+        {ignore}End of translations{/ignore}
+
+        {loop="$links"}
+            <div id="{$value.id}" class="link-outer{if="$value.class"} {$value.class}{/if}" data-id="{$value.id}">
+                <div class="link-overlay"></div>
+                <div class="link-inner">
+                    <div class="link-header">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <a class="link-title" href="{$value.real_url}">
+                                    {if="strpos($value.url, $value.shorturl) !== false"}
+                                    <i class="mdi mdi-note"></i>
+                                    {/if}
+                                    {$value.title_html}
+                                </a>
+                                <a href="{$value.real_url}" class="link-url"><span title="直链">{$value.real_url}</span></a>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="link-date">
+                                    {if="!$hide_timestamps || $is_logged_in"}
+                                        <span title="短链 - {function="strftime($dateFormat, $value.timestamp)"}"><a href="{$base_path}/shaare/{$value.shorturl}" class="link-actual-date">{function="strftime($dateFormat, $value.timestamp)"}</a></span>
+                                    {else}
+                                        <span title="Short link here"><a href="{$base_path}/shaare/{$value.shorturl}">Permalink</a></span>
+                                    {/if}
+                                    {loop="$value.link_plugin"}
+                                        <span class="link-plugin">{$value}</span>
+                                    {/loop}
+                                    {ignore}
+                                    {/ignore}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="link-content">
+                        <div>
+                            {if="$thumbnails_enabled && $value.thumbnail !== false"}
+                            <div class="thumb{if="$value.thumbnail === null"} hidden{/if}" {if="$value.thumbnail === null"}data-async-thumbnail="1"{/if}>
+                                <a href="{$value.real_url}">
+                                  {ignore}RainTPL hack: put the 2 src on two different line to avoid path replace bug{/ignore}
+                                  <img data-src="{$root_path}/{$value.thumbnail}#" class="b-lazy link-thumbnail"
+                                    src="#"
+                                    alt="thumbnail" width="{$thumbnails_width}" height="{$thumbnails_height}" />
+                                  </a>
+                            </div>
+                            {/if}
+                            {if="$value.description"}
+                                <div class="link-description">{$value.description}</div>
+                            {/if}
+                        </div>
+                    </div>
+                    <div class="link-footer is-flex">
+                        <div class="link-tag-list is-flex-grown">
+                        {if="$value.tags"}
+                            {loop="$value.taglist"}
+                                <span class="link-tag" title="寻找相同标签的链接"><a href="{$base_path}/add-tag/{$value1.taglist_urlencoded.$key2}">{$value1.taglist_html.$key2}</a></span>
+                            {/loop}
+                        {/if}
+                        </div>
+
+                        <div class="link-actions is-flex-end">
+                            {if="!$qrCodeDisabled"}
+                                <a href="#" data-permalink="{$value.real_url}" title="短链QR码" class="qrcode"><i class="mdi mdi-qrcode"></i></a>
+                            {/if}
+                            {if="$is_logged_in"}
+                                <a href="{$base_path}/admin/shaare/delete?id={$value.id}&amp;token={$token}" title="{$strDelete}" class="button-delete"><i class="mdi mdi-delete"></i></a>
+                                <a href="{$base_path}/admin/shaare/{$value.id}" title="{$strEdit}"><i class="mdi mdi-pencil"></i></a>
+                                <a href="{$base_path}/admin/shaare/{$value.id}/pin?token={$token}" title="{$strToggleSticky}" {if="isset($value.sticky) && $value.sticky"}class="is-pinned"{/if}><i class="mdi mdi-pin"></i></a>
+                            {else}
+                                {if="isset($value.sticky) && $value.sticky"}
+                                <span title="{$strSticky}"><i class="mdi mdi-pin"></i></span>
+                                {/if}
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {/loop}
+    </div>
+
+    {include="linklist.paging"}
+
+    {loop="$plugin_end_zone"}
+        {$value}
+    {/loop}
+</div>
+
+{if="!empty($linkcount)"}
+<div class="container text-center link-counter">
+    <em>共{$linkcount}条链接 {if="!empty($privateLinkcount)"}, 包含{$privateLinkcount}条私人链接{/if}</em>
+</div>
+{/if}
+
+    {include="page.footer"}
+</body>
+</html>

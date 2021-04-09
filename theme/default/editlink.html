@@ -1,0 +1,99 @@
+{if="empty($batch_mode)"}
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="editlink"}
+{include="includes"}
+</head>
+<body {if="!empty($_GET['source']) && $_GET['source']=='bookmarklet'"}class="from-bookmarklet"{/if}>
+{include="page.header"}
+{else}
+  {ignore}Lil hack: when included in a loop in batch mode, `$value` is assigned by RainTPL with template vars.{/ignore}
+  {function="extract($value) ? '' : ''"}
+{/if}
+{$asyncLoadClass=$link_is_new && $async_metadata && empty($link.title) ? 'loading-wrapper' : ''}
+{if="!isset($index)"}
+  {$index=""}
+{/if}
+<div id="editlinkform{$index}" class="editlinkform container page-edit">
+    <div class="row editlinkform-row">
+        <div class="col-md-6 col-md-offset-3 editlinkform-col">
+            <form method="post" name="linkform" class="card" action="{$base_path}/admin/shaare">
+                {if="isset($link.id)"}
+                   <input type="hidden" name="lf_id" value="{$link.id}">
+                {/if}
+                <input type="hidden" name="token" value="{$token}">
+                <input type="hidden" name="source" value="{$source}">
+                {if="$http_referer"}
+                    <input type="hidden" name="returnurl" value="{$http_referer}">
+                {/if}
+
+                <div class="card-header">
+                    {if="!$link_is_new"}编辑链接{else}添加链接{/if}
+                    {if="!$link_is_new"}<span class="card-subheader"> - {'created on'|t} {$link.created|format_date}</span>{/if}
+                    <button type="button" class="button-expand button-header visible-md visible-lg" title="Expand / reduce width"></button>
+                </div>
+                <div class="card-body">
+                    <div class="form-entry">
+                        <label for="lf_url{$index}">{'URL'|t}</label><br/>
+                        <input type="text" name="lf_url" id="lf_url{$index}" value="{$link.url}" placeholder="...留空为书签ID">
+                    </div>
+                    <div class="form-entry">
+                        <label for="lf_title{$index}">{'Title'|t}</label><br/>
+                        <div class="{$asyncLoadClass}">
+                            <input type="text" name="lf_title" id="lf_title{$index}" {if="empty($batch_mode) && $link.title==''"}class="autofocus"{/if} value="{$link.title}" placeholder="取个标题...">
+                        </div>
+                    </div>
+                    <div class="form-entry">
+                        <label for="lf_description{$index}">{'Description'|t}</label><br/>
+                        <div class="{$asyncLoadClass}">
+                            <textarea name="lf_description" id="lf_description{$index}" {if="empty($batch_mode) && $link.description==''"}class="autofocus"{/if} placeholder="描述一下..." rows="4">{$link.description}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-entry">
+                        <label for="lf_tags{$index}">{'Tags'|t}</label><br/>
+                        <div class="{$asyncLoadClass}">
+                            <input type="text" id="lf_tags{$index}" name="lf_tags" {if="empty($batch_mode)"}class="autofocus"{/if} value="{$link.tags}" class="lf_input"
+                                data-list="{loop="$tags"}{$key}, {/loop}" data-multiple autocomplete="off" />
+                        </div>
+                    </div>
+                    {if="isset($edit_link_plugin)"}
+                        {loop="$edit_link_plugin"}
+                        <div class="form-entry">
+                             {$value}
+                        </div>
+                        {/loop}
+                    {/if}
+                    <div class="form-entry">
+                        <input type="checkbox" class="filled-in" {if="$link.private === true"}checked="checked"{/if} name="lf_private" id="lf_private{$index}"/>
+                        <label for="lf_private{$index}">{'Private'|t}</label>
+                    </div>
+                    {if="$formatter==='markdown'"}
+                        <div class="form-entry">
+                            {'Description will be rendered with'|t}
+                            <a href="http://daringfireball.net/projects/markdown/syntax" title="{'Markdown syntax documentation'|t}">
+                                {'Markdown syntax'|t}
+                            </a>.
+                        </div>
+                    {/if}
+                </div>
+                <div class="card-footer">
+                    <button type="submit" name="save_edit" class="button-raised button-primary pull-right">{'Save'|t}</button>
+                    {if="!$link_is_new"}
+                        <a href="{$base_path}/admin/shaare/delete?id={$link.id}&amp;token={$token}"
+                            name="delete_link" class="button-raised button-alert">{'Delete'|t}</a>
+                    {/if}
+                    {if="!empty($batch_mode)"}
+                        <button type="button" name="cancel-batch-link" title="{'Remove this bookmark from batch creation/modification.'|t}" class="button pull-right ripple-primary">{'Cancel'|t}</button>
+                    {/if}
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{if="empty($batch_mode)"}
+{include="page.footer"}
+{/if}
+</body>
+</html>

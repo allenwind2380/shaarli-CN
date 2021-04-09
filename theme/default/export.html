@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+{$pageName="export"}
+{include="includes"}
+</head>
+<body>
+{include="page.header"}
+<div id="toolsdiv" class="container page-export">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form class="card" method="post" action="{$base_path}/admin/export">
+                <input type="hidden" name="token" value="{$token}">
+                <h1 class="card-header">{"Export Database"|t}</h1>
+                <div class="list-side-right">
+                    <div class="list-body">
+                        <div class="list-item no-border">
+                            <div class="list-item-content">
+                                <div class="list-item-label">{'Prepend note permalinks with this Shaarli instance\'s URL'|t}</div>
+                                <div class="list-item-sublabel">{'Useful to import bookmarks in a web browser'|t}</div>
+                            </div>
+                            <div class="list-item-side">
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" name="prepend_note_url" id="prepend_note_url"/>
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <label class="list-item-content" for="selection-all">
+                                <div class="list-item-label">🖇 全部</div>
+                                <div class="list-item-sublabel">导出全部链接及笔记</div>
+                            </label>
+                            <div class="list-item-side">
+                                <input name="selection" class="with-gap" type="radio" value="all" id="selection-all" checked />
+                                <label for="selection-all"></label>
+                            </div>
+                        </div>
+                        <div class="list-item no-border">
+                            <label class="list-item-content" for="selection-public">
+                                <div class="list-item-label">📢 公共</div>
+                                <div class="list-item-sublabel">导出全部公共链接及笔记</div>
+                            </label>
+                            <div class="list-item-side">
+                                <input name="selection" class="with-gap" type="radio" value="public" id="selection-public" />
+                                <label for="selection-public"></label>
+                            </div>
+                        </div>
+                        <div class="list-item no-border">
+                            <label class="list-item-content" for="selection-private">
+                                <div class="list-item-label">🔒 私人</div>
+                                <div class="list-item-sublabel">导出全部私人链接及笔记</div>
+                            </label>
+                            <div class="list-item-side">
+                                <input name="selection" class="with-gap" type="radio" value="private" id="selection-private" />
+                                <label for="selection-private"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer clearfix">
+                    <button type="submit" class="button-raised button-primary pull-right">{'Export'|t}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{include="page.footer"}
+</body>
+</html>
