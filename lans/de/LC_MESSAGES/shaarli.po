@@ -1,0 +1,1888 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Shaarli\n"
+"POT-Creation-Date: 2020-11-14 07:47+0500\n"
+"PO-Revision-Date: 2021-03-18 07:49+0800\n"
+"Language-Team: Shaarli\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ../../../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: t:1,2;t\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"X-Poedit-SearchPath-0: application\n"
+"X-Poedit-SearchPath-1: tmp\n"
+"X-Poedit-SearchPath-2: index.php\n"
+"X-Poedit-SearchPath-3: init.php\n"
+"X-Poedit-SearchPath-4: plugins\n"
+
+#: application/History.php:181
+msgid "History file isn't readable or writable"
+msgstr "无法读写历史文件"
+
+#: application/History.php:192
+msgid "Could not parse history file"
+msgstr "无法解析历史文件"
+
+#: application/Languages.php:184
+msgid "Automatic"
+msgstr "自动化"
+
+#: application/Languages.php:185
+msgid "German"
+msgstr "简中(德语改)"
+
+#: application/Languages.php:186
+msgid "English"
+msgstr "英语"
+
+#: application/Languages.php:187
+msgid "French"
+msgstr "法语"
+
+#: application/Languages.php:188
+msgid "Japanese"
+msgstr "日语"
+
+#: application/Languages.php:189
+msgid "Russian"
+msgstr "俄语"
+
+#: application/Thumbnailer.php:62
+msgid ""
+"php-gd extension must be loaded to use thumbnails. Thumbnails are now "
+"disabled. Please reload the page."
+msgstr ""
+"必须加载php-gd扩展才能使用缩略图, 缩略图现已禁用\n"
+"请重新加载页面"
+
+#: application/Utils.php:405
+msgid "Setting not set"
+msgstr "未设置"
+
+#: application/Utils.php:412
+msgid "Unlimited"
+msgstr "无限"
+
+#: application/Utils.php:415
+msgid "B"
+msgstr "B"
+
+#: application/Utils.php:415
+msgid "kiB"
+msgstr "KB"
+
+#: application/Utils.php:415
+msgid "MiB"
+msgstr "MB"
+
+#: application/Utils.php:415
+msgid "GiB"
+msgstr "GB"
+
+#: application/bookmark/BookmarkFileService.php:185
+#: application/bookmark/BookmarkFileService.php:207
+#: application/bookmark/BookmarkFileService.php:229
+#: application/bookmark/BookmarkFileService.php:243
+msgid "You're not authorized to alter the datastore"
+msgstr "您无权更改数据库"
+
+#: application/bookmark/BookmarkFileService.php:210
+msgid "This bookmarks already exists"
+msgstr "书签已存在"
+
+#: application/bookmark/BookmarkInitializer.php:42
+msgid "(private bookmark with thumbnail demo)"
+msgstr "(私有书签及图库Demo)"
+
+#: application/bookmark/BookmarkInitializer.php:45
+msgid ""
+"Shaarli will automatically pick up the thumbnail for links to a variety of "
+"websites.\n"
+"\n"
+"Explore your new Shaarli instance by trying out controls and menus.\n"
+"Visit the project on [Github](https://github.com/shaarli/Shaarli) or [the "
+"documentation](https://shaarli.readthedocs.io/en/master/) to learn more "
+"about Shaarli.\n"
+"\n"
+"Now you can edit or delete the default shaares.\n"
+msgstr ""
+"Shaarli会自动获取各种网站链接的缩略图\n"
+"\n"
+"点击菜单、设置来探索您的私有书签服务\n"
+"更多信息请访问[GitHub]上的项目(https://github.com/shaarli/shaarli)或[文档]"
+"(https://shaarli.readthedocs.io/en/master/)\n"
+"\n"
+"现在可以编辑、删除默认的书签叻\n"
+
+#: application/bookmark/BookmarkInitializer.php:58
+msgid "Note: Shaare descriptions"
+msgstr "Shaarli备注功能的小贴士"
+
+#: application/bookmark/BookmarkInitializer.php:60
+msgid ""
+"Adding a shaare without entering a URL creates a text-only \"note\" post "
+"such as this one.\n"
+"This note is private, so you are the only one able to see it while logged "
+"in.\n"
+"\n"
+"You can use this to keep notes, post articles, code snippets, and much "
+"more.\n"
+"\n"
+"The Markdown formatting setting allows you to format your notes and bookmark "
+"description:\n"
+"\n"
+"### Title headings\n"
+"\n"
+"#### Multiple headings levels\n"
+"  * bullet lists\n"
+"  * _italic_ text\n"
+"  * **bold** text\n"
+"  * ~~strike through~~ text\n"
+"  * `code` blocks\n"
+"  * images\n"
+"  * [links](https://en.wikipedia.org/wiki/Markdown)\n"
+"\n"
+"Markdown also supports tables:\n"
+"\n"
+"| Name    | Type      | Color  | Qty   |\n"
+"| ------- | --------- | ------ | ----- |\n"
+"| Orange  | Fruit     | Orange | 126   |\n"
+"| Apple   | Fruit     | Any    | 62    |\n"
+"| Lemon   | Fruit     | Yellow | 30    |\n"
+"| Carrot  | Vegetable | Red    | 14    |\n"
+msgstr ""
+"新建时无链接可创建一个空白备注\n"
+"\n"
+"这是个私有备注, 当然只能在你登录后才能看到\n"
+"你可以用模式记笔记、发短文、贴代码...\n"
+"并且单备注和链接备注都支持**Markdown**!\n"
+"\n"
+"### 标题\n"
+"\n"
+"#### 多级标题\n"
+"  * 项目列表\n"
+"  * _斜体_ \n"
+"  * **粗体** \n"
+"  * ~~删除线~~ \n"
+"  * `代码块` \n"
+"  * ![](https://github.com/shaarli/Shaarli/raw/master/doc/md/images/doc-logo."
+"png \"图片格式\") \n"
+"  * [链接格式](https://en.wikipedia.org/wiki/Markdown)\n"
+"\n"
+"并支持表格:\n"
+"\n"
+"| 名称    | 类型      | 颜色  | 数量   |\n"
+"| ------- | --------- | ------ | ----- |\n"
+"| 橙子  | 水果     | 橙色 | 126   |\n"
+"| 苹果   | 水果    | 都可    | 62    |\n"
+"| 柠檬   | 水果     | 黄色 | 30    |\n"
+"| 胡萝卜  | 蔬菜 | 红色    | 14    |\n"
+
+#: application/bookmark/BookmarkInitializer.php:94
+#: application/legacy/LegacyLinkDB.php:246
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:15
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:48
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:15
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:48
+msgid ""
+"The personal, minimalist, super-fast, database free, bookmarking service"
+msgstr "私有的、极简的、超快的、无须数据库的书签服务"
+
+#: application/bookmark/BookmarkInitializer.php:97
+msgid ""
+"Welcome to Shaarli!\n"
+"\n"
+"Shaarli allows you to bookmark your favorite pages, and share them with "
+"others or store them privately.\n"
+"You can add a description to your bookmarks, such as this one, and tag "
+"them.\n"
+"\n"
+"Create a new shaare by clicking the `+Shaare` button, or using any of the "
+"recommended tools (browser extension, mobile app, bookmarklet, REST API, "
+"etc.).\n"
+"\n"
+"You can easily retrieve your links, even with thousands of them, using the "
+"internal search engine, or search through tags (e.g. this Shaare is tagged "
+"with `shaarli` and `help`).\n"
+"Hashtags such as #shaarli #help are also supported.\n"
+"You can also filter the available [RSS feed](/feed/atom) and picture wall by "
+"tag or plaintext search.\n"
+"\n"
+"We hope that you will enjoy using Shaarli, maintained with ❤️ by the "
+"community!\n"
+"Feel free to open [an issue](https://github.com/shaarli/Shaarli/issues) if "
+"you have a suggestion or encounter an issue.\n"
+msgstr ""
+"欢迎来到Shaarli！\n"
+"\n"
+"将您喜爱的页面，添加至Shaarli私有书签服务，存储并分享\n"
+"任意书签都能够备注、加上标签，包括这个哦\n"
+"\n"
+"点击`+Shaare`创建书签，或是用推荐的多样化工具（浏览器扩展、移动端App、"
+"Javascript书签、REST API等等）\n"
+"\n"
+"内部的搜索引擎轻松检索链接，即使有数千个链接，也能通过标签快速进行筛选（例如"
+"此笔记加上`shaarli`与`help`）\n"
+"支持#shaarli #help 这样的Hashtags\n"
+"也可用标签和搜索过滤可用的[RSS feed](/feed/atom)与图片墙\n"
+"\n"
+"用❤发电，希望您能喜欢\n"
+"如果有任何建议，欢迎来[issues](https://github.com/shaarli/Shaarli/issues)页面"
+"留言\n"
+"\n"
+
+#: application/bookmark/exception/BookmarkNotFoundException.php:14
+msgid "The link you are trying to reach does not exist or has been deleted."
+msgstr "您想访问的链接不存在或已被删除"
+
+#: application/config/ConfigJson.php:52 application/config/ConfigPhp.php:131
+msgid ""
+"Shaarli could not create the config file. Please make sure Shaarli has the "
+"right to write in the folder is it installed in."
+msgstr "无法创建配置文件，请确保Shaarli有足够权限在安装路径写入文件"
+
+#: application/config/ConfigManager.php:137
+#: application/config/ConfigManager.php:164
+msgid "Invalid setting key parameter. String expected, got: "
+msgstr "无效设置参数，建议为: "
+
+#: application/config/exception/MissingFieldConfigException.php:20
+#, php-format
+msgid "Configuration value is required for %s"
+msgstr "%s 不能为空"
+
+#: application/config/exception/PluginConfigOrderException.php:15
+msgid "An error occurred while trying to save plugins loading order."
+msgstr "试图保存插件加载顺序时出错"
+
+#: application/config/exception/UnauthorizedConfigException.php:15
+msgid "You are not authorized to alter config."
+msgstr "您无权更改配置"
+
+#: application/exceptions/IOException.php:23
+msgid "Error accessing"
+msgstr "访问出错"
+
+#: application/feed/FeedBuilder.php:180
+msgid "Direct link"
+msgstr "直链"
+
+#: application/feed/FeedBuilder.php:182
+#: tmp/daily.b91ef64efc3688266305ea9b42e5017e.rtpl.php:103
+#: tmp/dailyrss.b91ef64efc3688266305ea9b42e5017e.rtpl.php:26
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:179
+msgid "Permalink"
+msgstr "书签链接"
+
+#: application/front/controller/admin/ConfigureController.php:56
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:24
+msgid "Configure"
+msgstr "设置"
+
+#: application/front/controller/admin/ConfigureController.php:106
+#: application/legacy/LegacyUpdater.php:539
+msgid "You have enabled or changed thumbnails mode."
+msgstr "已使用或更改了缩略图模式"
+
+#: application/front/controller/admin/ConfigureController.php:108
+#: application/front/controller/admin/ServerController.php:76
+#: application/legacy/LegacyUpdater.php:540
+msgid "Please synchronize them."
+msgstr "请同步"
+
+#: application/front/controller/admin/ConfigureController.php:119
+#: application/front/controller/visitor/InstallController.php:149
+msgid "Error while writing config file after configuration update."
+msgstr "配置更新后写入配置文件时出错"
+
+#: application/front/controller/admin/ConfigureController.php:128
+msgid "Configuration was saved."
+msgstr "设置已生效"
+
+#: application/front/controller/admin/ExportController.php:26
+#: tmp/export.b91ef64efc3688266305ea9b42e5017e.rtpl.php:64
+msgid "Export"
+msgstr "导出"
+
+#: application/front/controller/admin/ExportController.php:42
+msgid "Please select an export mode."
+msgstr "请选择导出选项"
+
+#: application/front/controller/admin/ImportController.php:41
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:83
+msgid "Import"
+msgstr "导入"
+
+#: application/front/controller/admin/ImportController.php:55
+msgid "No import file provided."
+msgstr "无导入文件"
+
+#: application/front/controller/admin/ImportController.php:66
+#, php-format
+msgid ""
+"The file you are trying to upload is probably bigger than what this "
+"webserver can accept (%s). Please upload in smaller chunks."
+msgstr "上传的文件大小似乎大于服务器允许的 %s ，请分卷上传"
+
+#: application/front/controller/admin/ManageTagController.php:30
+msgid "whitespace"
+msgstr "空格"
+
+#: application/front/controller/admin/ManageTagController.php:35
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:13
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:42
+msgid "Manage tags"
+msgstr "管理标签"
+
+#: application/front/controller/admin/ManageTagController.php:54
+msgid "Invalid tags provided."
+msgstr "标签无效"
+
+#: application/front/controller/admin/ManageTagController.php:78
+#, php-format
+msgid "The tag was removed from %d bookmark."
+msgid_plural "The tag was removed from %d bookmarks."
+msgstr[0] "已从 %d 个链接中删除"
+
+#: application/front/controller/admin/ManageTagController.php:83
+#, php-format
+msgid "The tag was renamed in %d bookmark."
+msgid_plural "The tag was renamed in %d bookmarks."
+msgstr[0] "已从 %d 个链接中重命名"
+
+#: application/front/controller/admin/ManageTagController.php:105
+msgid "Tags separator must be a single character."
+msgstr "标签分隔符必须是单一字符"
+
+#: application/front/controller/admin/ManageTagController.php:111
+msgid "These characters are reserved and can't be used as tags separator: "
+msgstr "这些字符不能用于标签分隔符"
+
+#: application/front/controller/admin/PasswordController.php:28
+#: tmp/changepassword.b91ef64efc3688266305ea9b42e5017e.rtpl.php:13
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:35
+msgid "Change password"
+msgstr "修改密码"
+
+#: application/front/controller/admin/PasswordController.php:55
+msgid "You must provide the current and new password to change it."
+msgstr "提供当前密码和新密码进行更改"
+
+#: application/front/controller/admin/PasswordController.php:71
+msgid "The old password is not correct."
+msgstr "旧密码不正确"
+
+#: application/front/controller/admin/PasswordController.php:97
+msgid "Your password has been changed"
+msgstr "密码已更改"
+
+#: application/front/controller/admin/PluginsController.php:45
+msgid ""
+msgstr "插件管理"
+
+#: application/front/controller/admin/PluginsController.php:76
+msgid "Setting successfully saved."
+msgstr "设置成功"
+
+#: application/front/controller/admin/PluginsController.php:79
+msgid "Error while saving plugin configuration: "
+msgstr "保存插件配置时出错"
+
+#: application/front/controller/admin/ServerController.php:35
+msgid "Check disabled"
+msgstr "已禁用更新"
+
+#: application/front/controller/admin/ServerController.php:57
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:14
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:28
+msgid "Server administration"
+msgstr "服务管理"
+
+#: application/front/controller/admin/ServerController.php:74
+msgid "Thumbnails cache has been cleared."
+msgstr "缩略图缓存已清理"
+
+#: application/front/controller/admin/ServerController.php:85
+msgid "Shaarli's cache folder has been cleared!"
+msgstr "缓存文件夹已清理"
+
+#: application/front/controller/admin/ShaareAddController.php:26
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:13
+msgid "Shaare a new link"
+msgstr "📎 添加书签"
+
+#: application/front/controller/admin/ShaareManageController.php:35
+#: application/front/controller/admin/ShaareManageController.php:93
+msgid "Invalid bookmark ID provided."
+msgstr "无效的书签ID"
+
+#: application/front/controller/admin/ShaareManageController.php:47
+#: application/front/controller/admin/ShaareManageController.php:116
+#: application/front/controller/admin/ShaareManageController.php:156
+#: application/front/controller/admin/ShaarePublishController.php:82
+#, php-format
+msgid "Bookmark with identifier %s could not be found."
+msgstr "找不到标识符为%s的书签"
+
+#: application/front/controller/admin/ShaareManageController.php:101
+msgid "Invalid visibility provided."
+msgstr "可见性无效"
+
+#: application/front/controller/admin/ShaarePublishController.php:173
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:171
+msgid "Edit"
+msgstr "编辑"
+
+#: application/front/controller/admin/ShaarePublishController.php:176
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:28
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:28
+msgid "Shaare"
+msgstr "Shaare"
+
+#: application/front/controller/admin/ShaarePublishController.php:208
+msgid "Note: "
+msgstr "笔记: "
+
+#: application/front/controller/admin/ThumbnailsController.php:37
+#: tmp/thumbnails.b91ef64efc3688266305ea9b42e5017e.rtpl.php:14
+msgid "Thumbnails update"
+msgstr "更新缩略图"
+
+#: application/front/controller/admin/ToolsController.php:31
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:33
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:33
+msgid "Tools"
+msgstr "工具箱"
+
+#: application/front/controller/visitor/BookmarkListController.php:121
+msgid "Search: "
+msgstr "搜索: "
+
+#: application/front/controller/visitor/DailyController.php:200
+msgid "day"
+msgstr "日"
+
+#: application/front/controller/visitor/DailyController.php:200
+#: application/front/controller/visitor/DailyController.php:203
+#: tmp/daily.b91ef64efc3688266305ea9b42e5017e.rtpl.php:13
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:48
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:48
+msgid "Daily"
+msgstr "📰 日报"
+
+#: application/front/controller/visitor/DailyController.php:201
+msgid "week"
+msgstr "周"
+
+#: application/front/controller/visitor/DailyController.php:201
+#: tmp/daily.b91ef64efc3688266305ea9b42e5017e.rtpl.php:14
+msgid "Weekly"
+msgstr "🗞 周刊"
+
+#: application/front/controller/visitor/DailyController.php:202
+msgid "month"
+msgstr "月"
+
+#: application/front/controller/visitor/DailyController.php:202
+#: tmp/daily.b91ef64efc3688266305ea9b42e5017e.rtpl.php:15
+msgid "Monthly"
+msgstr "📓 月集"
+
+#: application/front/controller/visitor/ErrorController.php:30
+msgid "Error: "
+msgstr "错误: "
+
+#: application/front/controller/visitor/ErrorController.php:34
+msgid "Please report it on Github."
+msgstr "至Github报告"
+
+#: application/front/controller/visitor/ErrorController.php:39
+msgid "An unexpected error occurred."
+msgstr "从未设想的错误"
+
+#: application/front/controller/visitor/ErrorNotFoundController.php:25
+msgid "Requested page could not be found."
+msgstr "无法找到请求界面"
+
+#: application/front/controller/visitor/InstallController.php:65
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:22
+msgid "Install Shaarli"
+msgstr "安装Shaarli"
+
+#: application/front/controller/visitor/InstallController.php:85
+#, php-format
+msgid ""
+"<pre>Sessions do not seem to work correctly on your server.<br>Make sure the "
+"variable \"session.save_path\" is set correctly in your PHP config, and that "
+"you have write access to it.<br>It currently points to %s.<br>On some "
+"browsers, accessing your server via a hostname like 'localhost' or any "
+"custom hostname without a dot causes cookie storage to fail. We recommend "
+"accessing your server via it's IP address or Fully Qualified Domain Name.<br>"
+msgstr ""
+"<pre>Sessions在服务器上似乎无法正常访问<br>请确保变量“session.save_path”在PHP"
+"中配置正确，并有读写权限<br>它当前指向% s<br>在某些浏览器上，“localhost”或其"
+"他不带接入口的自定义主机名，访问服务器会导致cookie存储失败，建议通过服务器的"
+"IP地址或域名来访问<br>"
+
+#: application/front/controller/visitor/InstallController.php:157
+msgid ""
+"Shaarli is now configured. Please login and start shaaring your bookmarks!"
+msgstr "Shaarli已配置完毕，可以登录使用叻"
+
+#: application/front/controller/visitor/InstallController.php:171
+msgid "Insufficient permissions:"
+msgstr "权限不足:"
+
+#: application/front/controller/visitor/LoginController.php:46
+#: tmp/loginform.b91ef64efc3688266305ea9b42e5017e.rtpl.php:14
+#: tmp/loginform.b91ef64efc3688266305ea9b42e5017e.rtpl.php:28
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:77
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:101
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:77
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:101
+msgid "Login"
+msgstr "登录"
+
+#: application/front/controller/visitor/LoginController.php:78
+msgid "Wrong login/password."
+msgstr "用户名或密码错误"
+
+#: application/front/controller/visitor/PictureWallController.php:29
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:43
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:43
+msgid "Picture wall"
+msgstr "🌆 图片墙"
+
+#: application/front/controller/visitor/TagCloudController.php:90
+msgid "Tag "
+msgstr "标签"
+
+#: application/front/exceptions/AlreadyInstalledException.php:11
+msgid "Shaarli has already been installed. Login to edit the configuration."
+msgstr "Shaarli已部署完毕，可以登录进行配置叻"
+
+#: application/front/exceptions/LoginBannedException.php:11
+msgid ""
+"You have been banned after too many failed login attempts. Try again later."
+msgstr "已登录失败多次，请稍后再试"
+
+#: application/front/exceptions/OpenShaarliPasswordException.php:16
+msgid "You are not supposed to change a password on an Open Shaarli."
+msgstr "无法更改公共空间下的密码"
+
+#: application/front/exceptions/ThumbnailsDisabledException.php:11
+msgid "Picture wall unavailable (thumbnails are disabled)."
+msgstr "未使用图片墙 (缩略图已禁用)"
+
+#: application/front/exceptions/WrongTokenException.php:16
+msgid "Wrong token."
+msgstr "Token错误"
+
+#: application/helper/ApplicationUtils.php:163
+#, php-format
+msgid ""
+"Your PHP version is obsolete! Shaarli requires at least PHP %s, and thus "
+"cannot run. Your PHP version has known security vulnerabilities and should "
+"be updated as soon as possible."
+msgstr ""
+"您的 PHP 版本已过时！Shaarli 至少需要 PHP %s, 因此无法运行\n"
+"您的 PHP 版本已知存在安全漏洞, 应尽快更新"
+
+#: application/helper/ApplicationUtils.php:198
+#: application/helper/ApplicationUtils.php:218
+msgid "directory is not readable"
+msgstr "无法读取目录"
+
+#: application/helper/ApplicationUtils.php:221
+msgid "directory is not writable"
+msgstr "无法记录目录"
+
+#: application/helper/ApplicationUtils.php:245
+msgid "file is not readable"
+msgstr "无法读取文件"
+
+#: application/helper/ApplicationUtils.php:248
+msgid "file is not writable"
+msgstr "无法记录文件"
+
+#: application/helper/ApplicationUtils.php:282
+msgid "Configuration parsing"
+msgstr "配置解析"
+
+#: application/helper/ApplicationUtils.php:283
+msgid "Slim Framework (routing, etc.)"
+msgstr "Slim 框架 (线路等)"
+
+#: application/helper/ApplicationUtils.php:284
+msgid "Multibyte (Unicode) string support"
+msgstr "多字节文本支持 (Unicode) "
+
+#: application/helper/ApplicationUtils.php:285
+msgid "Required to use thumbnails"
+msgstr "需使用缩略图"
+
+#: application/helper/ApplicationUtils.php:286
+msgid "Localized text sorting (e.g. e->è->f)"
+msgstr "本地化文本排序 (如e->è->f)"
+
+#: application/helper/ApplicationUtils.php:287
+msgid "Better retrieval of bookmark metadata and thumbnail"
+msgstr "元数据与缩略图检索更方便"
+
+#: application/helper/ApplicationUtils.php:288
+msgid "Use the translation system in gettext mode"
+msgstr "使用gettext方式的多语言支持"
+
+#: application/helper/ApplicationUtils.php:289
+msgid "Login using LDAP server"
+msgstr "通过LDAP服务登录"
+
+#: application/helper/DailyPageHelper.php:172
+msgid "Week"
+msgstr "周"
+
+#: application/helper/DailyPageHelper.php:176
+msgid "Today"
+msgstr "今日"
+
+#: application/helper/DailyPageHelper.php:178
+msgid "Yesterday"
+msgstr "昨日"
+
+#: application/helper/FileUtils.php:100
+msgid "Provided path is not a directory."
+msgstr "路径为非目录"
+
+#: application/helper/FileUtils.php:104
+msgid "Trying to delete a folder outside of Shaarli path."
+msgstr "尝试删除Shaarli目录外的文件夹"
+
+#: application/legacy/LegacyLinkDB.php:131
+msgid "You are not authorized to add a link."
+msgstr "您无权添加链接"
+
+#: application/legacy/LegacyLinkDB.php:134
+msgid "Internal Error: A link should always have an id and URL."
+msgstr "内部错误: 链接应当有ID标识和URL网址"
+
+#: application/legacy/LegacyLinkDB.php:137
+msgid "You must specify an integer as a key."
+msgstr "请填入整数"
+
+#: application/legacy/LegacyLinkDB.php:140
+msgid "Array offset and link ID must be equal."
+msgstr "链接ID必须与数组偏移一致"
+
+#: application/legacy/LegacyLinkDB.php:249
+msgid ""
+"Welcome to Shaarli! This is your first public bookmark. To edit or delete "
+"me, you must first login.\n"
+"\n"
+"To learn how to use Shaarli, consult the link \"Documentation\" at the "
+"bottom of this page.\n"
+"\n"
+"You use the community supported version of the original Shaarli project, by "
+"Sebastien Sauvage."
+msgstr ""
+"这是你的第一个公开的书签, 要想编辑或删除, 您必须先登录\n"
+"\n"
+"要了解如何使用Shaarli, 请参考页脚的“文档”(En)\n"
+"\n"
+"您正在使用由Sebastien Sauvage打造的, 并拥有社区支持的Shaarli项目"
+
+#: application/legacy/LegacyLinkDB.php:266
+msgid "My secret stuff... - Pastebin.com"
+msgstr "我的秘密... - Pastebin.com"
+
+#: application/legacy/LegacyLinkDB.php:268
+msgid "Shhhh! I'm a private link only YOU can see. You can delete me too."
+msgstr "嘘—— 这是只有你能看到的私有链接，当然你也可以删了它"
+
+#: application/legacy/LegacyUpdater.php:104
+msgid "Couldn't retrieve updater class methods."
+msgstr "找不到更新程序"
+
+#: application/legacy/LegacyUpdater.php:540
+msgid "<a href=\"./admin/thumbnails\">"
+msgstr "<a href=\"./admin/thumbnails\">"
+
+#: application/netscape/NetscapeBookmarkUtils.php:63
+msgid "Invalid export selection:"
+msgstr "无效导出选择: "
+
+#: application/netscape/NetscapeBookmarkUtils.php:215
+#, php-format
+msgid "File %s (%d bytes) "
+msgstr "文件名 %s (%d bytes)"
+
+#: application/netscape/NetscapeBookmarkUtils.php:217
+msgid "has an unknown file format. Nothing was imported."
+msgstr "是未知的文件格式，无输出内容"
+
+#: application/netscape/NetscapeBookmarkUtils.php:221
+#, php-format
+msgid ""
+"was successfully processed in %d seconds: %d bookmarks imported, %d "
+"bookmarks overwritten, %d bookmarks skipped."
+msgstr "在%d秒内处理完毕: 已导入%d个链接，已覆盖%d个链接，已跳过%d个链接"
+
+#: application/plugin/PluginManager.php:125
+msgid " [plugin incompatibility]: "
+msgstr "[插件不兼容]: "
+
+#: application/plugin/exception/PluginFileNotFoundException.php:22
+#, php-format
+msgid "Plugin \"%s\" files not found."
+msgstr "未找到 %s 插件"
+
+#: application/render/PageCacheManager.php:32
+#, php-format
+msgid "Cannot purge %s: no directory"
+msgstr "无法清除 %s : 没有目录"
+
+#: application/updater/exception/UpdaterException.php:51
+msgid "An error occurred while running the update "
+msgstr "更新时发生错误"
+
+#: index.php:81
+msgid "Shared bookmarks on "
+msgstr "共享书签: "
+
+#: plugins/addlink_toolbar/addlink_toolbar.php:31
+msgid "URI"
+msgstr "URL"
+
+#: plugins/addlink_toolbar/addlink_toolbar.php:35
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:20
+msgid "Add link"
+msgstr "添加链接"
+
+#: plugins/addlink_toolbar/addlink_toolbar.php:52
+msgid "Adds the addlink input on the linklist page."
+msgstr "添加至链接列表"
+
+#: plugins/archiveorg/archiveorg.php:29
+msgid "View on archive.org"
+msgstr "Archive.org 上查看"
+
+#: plugins/archiveorg/archiveorg.php:42
+msgid "For each link, add an Archive.org icon."
+msgstr "为每个链接添加来自 Archive.org 的图标"
+
+#: plugins/default_colors/default_colors.php:38
+msgid ""
+"Default colors plugin error: This plugin is active and no custom color is "
+"configured."
+msgstr "\"主题色\" 插件出错: 未自定义颜色"
+
+#: plugins/default_colors/default_colors.php:113
+msgid "Override default theme colors. Use any CSS valid color."
+msgstr "使用CSS有效色值更改主题色"
+
+#: plugins/default_colors/default_colors.php:114
+msgid "Main color (navbar green)"
+msgstr "主题色 (默认绿色)"
+
+#: plugins/default_colors/default_colors.php:115
+msgid "Background color (light grey)"
+msgstr "背景色 (默认浅灰)"
+
+#: plugins/default_colors/default_colors.php:116
+msgid "Dark main color (e.g. visited links)"
+msgstr "主深色 (如已点链接)"
+
+#: plugins/demo_plugin/demo_plugin.php:478
+msgid ""
+"A demo plugin covering all use cases for template designers and plugin "
+"developers."
+msgstr "Demo 插件将涵盖了模板设计者和插件开发者的所有用例"
+
+#: plugins/demo_plugin/demo_plugin.php:479
+msgid "This is a parameter dedicated to the demo plugin. It'll be suffixed."
+msgstr "演示插件专用参数 (带有后缀)"
+
+#: plugins/demo_plugin/demo_plugin.php:480
+msgid "Other demo parameter"
+msgstr "其他Demo参数"
+
+#: plugins/isso/isso.php:22
+msgid ""
+"Isso plugin error: Please define the \"ISSO_SERVER\" setting in the plugin "
+"administration page."
+msgstr "Isso 插件错误: 参数 “ISSO_SERVER” 未定义"
+
+#: plugins/isso/isso.php:92
+msgid "Let visitor comment your shaares on permalinks with Isso."
+msgstr "让访客在Isso的书签链接进行评论"
+
+#: plugins/isso/isso.php:93
+msgid "Isso server URL (without 'http://')"
+msgstr "Isso 服务器地址 (不带 'http://')"
+
+#: plugins/piwik/piwik.php:24
+msgid ""
+"Piwik plugin error: Please define PIWIK_URL and PIWIK_SITEID in the plugin "
+"administration page."
+msgstr "Piwik 插件错误: 参数 “PIWIK_URL” 和 “PIWIK_SITEID” 未定义"
+
+#: plugins/piwik/piwik.php:73
+msgid "A plugin that adds Piwik tracking code to Shaarli pages."
+msgstr "将Piwik跟踪代码添加到Shaarli页面"
+
+#: plugins/piwik/piwik.php:74
+msgid "Piwik URL"
+msgstr "Piwik地址"
+
+#: plugins/piwik/piwik.php:75
+msgid "Piwik site ID"
+msgstr "Piwik站点的ID"
+
+#: plugins/playvideos/playvideos.php:26
+msgid "Video player"
+msgstr "视频播放器"
+
+#: plugins/playvideos/playvideos.php:29
+msgid "Play Videos"
+msgstr "播放"
+
+#: plugins/playvideos/playvideos.php:60
+msgid "Add a button in the toolbar allowing to watch all videos."
+msgstr "在工具栏中添加允许观看视频的按钮"
+
+#: plugins/playvideos/youtube_playlist.js:214
+msgid "plugins/playvideos/jquery-1.11.2.min.js"
+msgstr "plugins/playvideos/jquery-1.11.2.min.js"
+
+#: plugins/pubsubhubbub/pubsubhubbub.php:72
+#, php-format
+msgid "Could not publish to PubSubHubbub: %s"
+msgstr "无法发布到PubSubHubbub: %s"
+
+#: plugins/pubsubhubbub/pubsubhubbub.php:99
+#, php-format
+msgid "Could not post to %s"
+msgstr "无法发布到 %s"
+
+#: plugins/pubsubhubbub/pubsubhubbub.php:103
+#, php-format
+msgid "Bad response from the hub %s"
+msgstr "来自hub %s 的错误响应"
+
+#: plugins/pubsubhubbub/pubsubhubbub.php:114
+msgid "Enable PubSubHubbub feed publishing."
+msgstr "启用 PubSubHubbub 摘要发布"
+
+#: plugins/qrcode/qrcode.php:74 plugins/wallabag/wallabag.php:72
+msgid "For each link, add a QRCode icon."
+msgstr "为每个链接添加二维码"
+
+#: plugins/wallabag/wallabag.php:22
+msgid ""
+"Wallabag plugin error: Please define the \"WALLABAG_URL\" setting in the "
+"plugin administration page."
+msgstr "Wallabag插件错误: 参数 “WALLABAG_URL” 未定义"
+
+#: plugins/wallabag/wallabag.php:49
+msgid "Save to wallabag"
+msgstr "保存到wallabag"
+
+#: plugins/wallabag/wallabag.php:73
+msgid "Wallabag API URL"
+msgstr "Wallabag API 地址"
+
+#: plugins/wallabag/wallabag.php:74
+msgid "Wallabag API version (1 or 2)"
+msgstr "Wallabag API 版本 (1 or 2)"
+
+#: tmp/404.b91ef64efc3688266305ea9b42e5017e.rtpl.php:12
+msgid "Sorry, nothing to see here."
+msgstr "这...我们到这的时候就剩下这个了"
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+msgid "URL or leave empty to post a note"
+msgstr "添加URL发布链接"
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:29
+msgid "BULK CREATION"
+msgstr "<strong>批量创建</strong>"
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:40
+msgid "Metadata asynchronous retrieval is disabled."
+msgstr "已禁用元数据异步检索"
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:42
+msgid ""
+"We recommend that you enable the setting <em>general > "
+"enable_async_metadata</em> in your configuration file to use bulk link "
+"creation."
+msgstr ""
+"建议在配置文件中启用设置 <em>通用 > 使用异步元数据</em> 来使用批量链接创建"
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:56
+msgid "Shaare multiple new links"
+msgstr "🖇 添加多链接"
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:59
+msgid "Add one URL per line to create multiple bookmarks."
+msgstr "换行添加多个链接..."
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:63
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:67
+msgid "Tags"
+msgstr "标签"
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:73
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:83
+#: tmp/export.b91ef64efc3688266305ea9b42e5017e.rtpl.php:35
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:169
+msgid "Private"
+msgstr "私有"
+
+#: tmp/addlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:78
+msgid "Add links"
+msgstr "添加链接"
+
+#: tmp/changepassword.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+msgid "Current password"
+msgstr "当前密码"
+
+#: tmp/changepassword.b91ef64efc3688266305ea9b42e5017e.rtpl.php:19
+msgid "New password"
+msgstr "新密码"
+
+#: tmp/changepassword.b91ef64efc3688266305ea9b42e5017e.rtpl.php:23
+msgid "Change"
+msgstr "更改"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:77
+msgid "Tag"
+msgstr "标签"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:24
+msgid "New name"
+msgstr "新名称"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:31
+msgid "Case sensitive"
+msgstr "区分大小写"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:34
+#: tmp/tag.list.b91ef64efc3688266305ea9b42e5017e.rtpl.php:68
+msgid "Rename tag"
+msgstr "重命名"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:35
+msgid "Delete tag"
+msgstr "删除"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:40
+msgid "You can also edit tags in the"
+msgstr "编辑标签也可以到"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:40
+msgid "tag list"
+msgstr "标签列表"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:47
+msgid "Change tags separator"
+msgstr "修改标签分隔符"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:50
+msgid "Your current tag separator is"
+msgstr "当前的分隔符为"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:53
+msgid "New separator"
+msgstr "↔ 新分割符"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:58
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:355
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:121
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:139
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:199
+msgid "Save"
+msgstr "保存"
+
+#: tmp/changetag.b91ef64efc3688266305ea9b42e5017e.rtpl.php:61
+msgid "Note that hashtags won't fully work with a non-whitespace separator."
+msgstr "Hashtags不能完全使用非空白分隔符"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:29
+msgid "title"
+msgstr "标题"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:43
+msgid "Home link"
+msgstr "主域名"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:44
+msgid "Default value"
+msgstr "默认值"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:58
+msgid "Theme"
+msgstr "主题"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:85
+msgid "Description formatter"
+msgstr "备注格式"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:114
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:77
+msgid "Language"
+msgstr "语言"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:143
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:101
+msgid "Timezone"
+msgstr "时区"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:144
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:102
+msgid "Continent"
+msgstr "大洲/地区"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:144
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:102
+msgid "City"
+msgstr "城市"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:191
+msgid "Disable session cookie hijacking protection"
+msgstr "禁用cookie劫持保护"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:193
+msgid "Check this if you get disconnected or if your IP address changes often"
+msgstr "如果您断开连接或您的IP地址经常更改, 请选此项"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:210
+msgid "Private links by default"
+msgstr "默认私有"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:211
+msgid "All new links are private by default"
+msgstr "默认所有链接为私有"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:226
+msgid "RSS direct links"
+msgstr "RSS直链"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:227
+msgid "Check this to use direct URL instead of permalink in feeds"
+msgstr "优先使用直链替代对应书签链接"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:242
+msgid "Hide public links"
+msgstr "隐藏公共链接"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:243
+msgid "Do not show any links if the user is not logged in"
+msgstr "未登录不显示任何链接"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:258
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:149
+msgid "Check updates"
+msgstr "检查更新"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:259
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:151
+msgid "Notify me when a new release is ready"
+msgstr "新版本准备好时通知我"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:274
+msgid "Automatically retrieve description for new bookmarks"
+msgstr "自动添加备注"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:275
+msgid "Shaarli will try to retrieve the description from meta HTML headers"
+msgstr "会尝试元HTML标题中寻找描述"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:290
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:168
+msgid "Enable REST API"
+msgstr "启用 REST API"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:291
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:169
+msgid "Allow third party software to use Shaarli such as mobile application"
+msgstr "允许第三方软件使用Shaarli, 如移动APP"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:306
+msgid "API secret"
+msgstr "API密钥"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:320
+msgid "Enable thumbnails"
+msgstr "启用缩略图"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:324
+msgid "You need to enable the extension <code>php-gd</code> to use thumbnails."
+msgstr "需开启 <code>php-gd</code> 扩展方可只用"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:328
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:122
+msgid "Synchronize thumbnails"
+msgstr "同步缩略图"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:339
+#: tmp/export.b91ef64efc3688266305ea9b42e5017e.rtpl.php:30
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:102
+msgid "All"
+msgstr "全部"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:343
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:106
+msgid "Only common media hosts"
+msgstr "仅限常用媒体站点"
+
+#: tmp/configure.b91ef64efc3688266305ea9b42e5017e.rtpl.php:347
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:110
+msgid "None"
+msgstr "无"
+
+#: tmp/daily.b91ef64efc3688266305ea9b42e5017e.rtpl.php:26
+msgid "1 RSS entry per :type"
+msgid_plural ""
+msgstr[0] "每:type RSS条目"
+
+#: tmp/daily.b91ef64efc3688266305ea9b42e5017e.rtpl.php:49
+msgid "Previous :type"
+msgid_plural ""
+msgstr[0] "前一:type"
+
+#: tmp/daily.b91ef64efc3688266305ea9b42e5017e.rtpl.php:56
+#: tmp/dailyrss.b91ef64efc3688266305ea9b42e5017e.rtpl.php:7
+msgid "All links of one :type in a single page."
+msgid_plural ""
+msgstr[0] "本:type所有链接速览"
+
+#: tmp/daily.b91ef64efc3688266305ea9b42e5017e.rtpl.php:63
+msgid "Next :type"
+msgid_plural ""
+msgstr[0] "后一:type"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:30
+msgid "Edit Shaare"
+msgstr "编辑"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:30
+msgid "New Shaare"
+msgstr "添加"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:38
+msgid "Created:"
+msgstr "创建于 :"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:41
+msgid "URL"
+msgstr "URL"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:47
+msgid "Title"
+msgstr "标题"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:58
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:42
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:75
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:99
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:124
+msgid "Description"
+msgstr "备注"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:89
+msgid "Description will be rendered with"
+msgstr "备注将用"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:91
+msgid "Markdown syntax documentation"
+msgstr "Markdown文档"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:92
+msgid "Markdown syntax"
+msgstr "Markdown语法"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:115
+msgid "Cancel"
+msgstr "取消"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:121
+msgid "Apply Changes"
+msgstr "应用"
+
+#: tmp/editlink.b91ef64efc3688266305ea9b42e5017e.rtpl.php:126
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:173
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:147
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:147
+#: tmp/tag.list.b91ef64efc3688266305ea9b42e5017e.rtpl.php:67
+msgid "Delete"
+msgstr "删除"
+
+#: tmp/editlink.batch.b91ef64efc3688266305ea9b42e5017e.rtpl.php:21
+#: tmp/editlink.batch.b91ef64efc3688266305ea9b42e5017e.rtpl.php:32
+msgid "Save all"
+msgstr "保存全部"
+
+#: tmp/export.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+msgid "Export Database"
+msgstr "导出数据"
+
+#: tmp/export.b91ef64efc3688266305ea9b42e5017e.rtpl.php:23
+msgid "Selection"
+msgstr "选段"
+
+#: tmp/export.b91ef64efc3688266305ea9b42e5017e.rtpl.php:40
+msgid "Public"
+msgstr "备注将用"
+
+#: tmp/export.b91ef64efc3688266305ea9b42e5017e.rtpl.php:51
+msgid "Prepend note permalinks with this Shaarli instance's URL"
+msgstr "URL前添加书签备注"
+
+#: tmp/export.b91ef64efc3688266305ea9b42e5017e.rtpl.php:52
+msgid "Useful to import bookmarks in a web browser"
+msgstr "在网页浏览器中导入书签很有用"
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+msgid "Import Database"
+msgstr "导入数据"
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:23
+msgid "Maximum size allowed:"
+msgstr "最大允许: "
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:29
+msgid "Visibility"
+msgstr "可见"
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:36
+msgid "Use values from the imported file, default to public"
+msgstr "使用导入文件中的值，默认为公共"
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:41
+msgid "Import all bookmarks as private"
+msgstr "所有书签导入至私有"
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:46
+msgid "Import all bookmarks as public"
+msgstr "﻿所有书签导入至公共"
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:57
+msgid "Overwrite existing bookmarks"
+msgstr "覆盖现有书签"
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:58
+msgid "Duplicates based on URL"
+msgstr "﻿复制 (URL)"
+
+#: tmp/import.b91ef64efc3688266305ea9b42e5017e.rtpl.php:72
+msgid "Add default tags"
+msgstr "添加默认标签"
+
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:25
+msgid "It looks like it's the first time you run Shaarli. Please configure it."
+msgstr "看起来是第一次在这里运行Shaarli，简单配置即可食用"
+
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:32
+#: tmp/loginform.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:167
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:167
+msgid "Username"
+msgstr "用户名"
+
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:47
+#: tmp/loginform.b91ef64efc3688266305ea9b42e5017e.rtpl.php:20
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:168
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:168
+msgid "Password"
+msgstr "密码"
+
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:62
+msgid "Shaarli title"
+msgstr "页面标题"
+
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:68
+msgid "My links"
+msgstr "我的链接"
+
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:181
+msgid "Install"
+msgstr "安装"
+
+#: tmp/install.b91ef64efc3688266305ea9b42e5017e.rtpl.php:190
+msgid "Server requirements"
+msgstr "服务器需求"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:14
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:79
+msgid "shaare"
+msgid_plural "shaares"
+msgstr[0] "条目"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:18
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:83
+msgid "private link"
+msgid_plural "private links"
+msgstr[0] "私有链接"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:30
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:123
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:123
+msgid "Search text"
+msgstr "搜索文本"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:37
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:130
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:130
+#: tmp/tag.cloud.b91ef64efc3688266305ea9b42e5017e.rtpl.php:36
+#: tmp/tag.cloud.b91ef64efc3688266305ea9b42e5017e.rtpl.php:65
+#: tmp/tag.list.b91ef64efc3688266305ea9b42e5017e.rtpl.php:36
+#: tmp/tag.list.b91ef64efc3688266305ea9b42e5017e.rtpl.php:74
+msgid "Filter by tag"
+msgstr "标签过滤"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:46
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:87
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:139
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:87
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:139
+#: tmp/tag.cloud.b91ef64efc3688266305ea9b42e5017e.rtpl.php:46
+#: tmp/tag.list.b91ef64efc3688266305ea9b42e5017e.rtpl.php:45
+msgid "Search"
+msgstr ""
+"🔍\n"
+" 搜索"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:110
+msgid "Nothing found."
+msgstr "啥都没找到"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:118
+#, php-format
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] "共%s个结果"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:122
+msgid "for"
+msgstr "包含"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:129
+msgid "tagged"
+msgstr "已选标签: "
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:133
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:134
+msgid "Remove tag"
+msgstr "删除标签"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:144
+msgid "with status"
+msgstr "当前过滤: "
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:155
+msgid "without any tag"
+msgstr "无标签"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:175
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:41
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:41
+msgid "Fold"
+msgstr "折叠"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:177
+msgid "Edited: "
+msgstr "编辑于: "
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:181
+msgid "permalink"
+msgstr "书签链接"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:183
+msgid "Add tag"
+msgstr "添加标签"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:185
+msgid "Toggle sticky"
+msgstr "切换置顶"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:187
+msgid "Sticky"
+msgstr "置顶"
+
+#: tmp/linklist.b91ef64efc3688266305ea9b42e5017e.rtpl.php:189
+msgid "Share a private link"
+msgstr "分享私有链接"
+
+#: tmp/linklist.paging.b91ef64efc3688266305ea9b42e5017e.rtpl.php:5
+#: tmp/linklist.paging.cedf684561d925457130839629000a81.rtpl.php:5
+msgid "Filters"
+msgstr "过滤器"
+
+#: tmp/linklist.paging.b91ef64efc3688266305ea9b42e5017e.rtpl.php:10
+#: tmp/linklist.paging.cedf684561d925457130839629000a81.rtpl.php:10
+msgid "Only display private links"
+msgstr "只含私有"
+
+#: tmp/linklist.paging.b91ef64efc3688266305ea9b42e5017e.rtpl.php:13
+#: tmp/linklist.paging.cedf684561d925457130839629000a81.rtpl.php:13
+msgid "Only display public links"
+msgstr "只含公共"
+
+#: tmp/linklist.paging.b91ef64efc3688266305ea9b42e5017e.rtpl.php:18
+#: tmp/linklist.paging.cedf684561d925457130839629000a81.rtpl.php:18
+msgid "Filter untagged links"
+msgstr "无标签"
+
+#: tmp/linklist.paging.b91ef64efc3688266305ea9b42e5017e.rtpl.php:24
+#: tmp/linklist.paging.cedf684561d925457130839629000a81.rtpl.php:24
+msgid "Select all"
+msgstr "全选"
+
+#: tmp/linklist.paging.b91ef64efc3688266305ea9b42e5017e.rtpl.php:29
+#: tmp/linklist.paging.b91ef64efc3688266305ea9b42e5017e.rtpl.php:89
+#: tmp/linklist.paging.cedf684561d925457130839629000a81.rtpl.php:29
+#: tmp/linklist.paging.cedf684561d925457130839629000a81.rtpl.php:89
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:42
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:42
+msgid "Fold all"
+msgstr "折叠全部"
+
+#: tmp/linklist.paging.b91ef64efc3688266305ea9b42e5017e.rtpl.php:76
+#: tmp/linklist.paging.cedf684561d925457130839629000a81.rtpl.php:76
+msgid "Links per page"
+msgstr "每页链接数"
+
+#: tmp/loginform.b91ef64efc3688266305ea9b42e5017e.rtpl.php:25
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:171
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:171
+msgid "Remember me"
+msgstr "保持登录"
+
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:15
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:48
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:15
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:48
+msgid "by the Shaarli community"
+msgstr "由Shaarli社区维护"
+
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:16
+msgid "Documentation"
+msgstr "文档"
+
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:43
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:43
+msgid "Expand"
+msgstr "展开"
+
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:44
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:44
+msgid "Expand all"
+msgstr "展开全部"
+
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:45
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:45
+msgid "Are you sure you want to delete this link?"
+msgstr "是否要删除链接"
+
+#: tmp/page.footer.b91ef64efc3688266305ea9b42e5017e.rtpl.php:46
+#: tmp/page.footer.cedf684561d925457130839629000a81.rtpl.php:46
+msgid "Are you sure you want to delete this tag?"
+msgstr "是否要删除标签"
+
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:11
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:11
+msgid "Menu"
+msgstr "菜单"
+
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:38
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:38
+#: tmp/tag.cloud.b91ef64efc3688266305ea9b42e5017e.rtpl.php:19
+msgid "Tag cloud"
+msgstr "🔖 标签"
+
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:67
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:92
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:67
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:92
+msgid "RSS Feed"
+msgstr "📨 RSS订阅"
+
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:72
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:108
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:72
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:108
+msgid "Logout"
+msgstr "登出"
+
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:152
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:152
+msgid "Set public"
+msgstr "设为公共"
+
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:157
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:157
+msgid "Set private"
+msgstr "设为私有"
+
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:189
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:189
+msgid "is available"
+msgstr "是否可用"
+
+#: tmp/page.header.b91ef64efc3688266305ea9b42e5017e.rtpl.php:196
+#: tmp/page.header.cedf684561d925457130839629000a81.rtpl.php:196
+msgid "Error"
+msgstr "错误"
+
+#: tmp/picwall.b91ef64efc3688266305ea9b42e5017e.rtpl.php:15
+msgid "There is no cached thumbnail."
+msgstr "无缓存缩略图"
+
+#: tmp/picwall.b91ef64efc3688266305ea9b42e5017e.rtpl.php:17
+msgid "Try to synchronize them."
+msgstr "同步链接缩略图"
+
+#: tmp/picwall.b91ef64efc3688266305ea9b42e5017e.rtpl.php:28
+msgid "Picture Wall"
+msgstr "图片墙"
+
+#: tmp/picwall.b91ef64efc3688266305ea9b42e5017e.rtpl.php:28
+msgid "pics"
+msgstr "图片"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:15
+msgid "You need to enable Javascript to change plugin loading order."
+msgstr "您需要启用Javascript来更改插件加载顺序"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:26
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:22
+msgid "Plugin administration"
+msgstr "插件管理"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:29
+msgid "Enabled Plugins"
+msgstr "已启用插件"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:34
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:155
+msgid "No plugin enabled."
+msgstr "无插件启用"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:40
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:73
+msgid "Disable"
+msgstr "禁用"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:41
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:74
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:98
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:123
+msgid "Name"
+msgstr "名称"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:43
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:76
+msgid "Order"
+msgstr "排序"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:86
+msgid "Disabled Plugins"
+msgstr "﻿已禁插件"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:91
+msgid "No plugin disabled."
+msgstr "无插件启用"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:97
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:122
+msgid "Enable"
+msgstr "启用"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:134
+msgid "More plugins available"
+msgstr "更多插件请搜寻"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:136
+msgid "in the documentation"
+msgstr "文档"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:150
+msgid "Plugin configuration"
+msgstr "插件配置"
+
+#: tmp/pluginsadmin.b91ef64efc3688266305ea9b42e5017e.rtpl.php:195
+msgid "No parameter available."
+msgstr "无参数选择"
+
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+msgid "General"
+msgstr "通用"
+
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:20
+msgid "Index URL"
+msgstr "主页"
+
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:28
+msgid "Base path"
+msgstr "基本路径"
+
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:36
+msgid "Client IP"
+msgstr "服务器IP"
+
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:44
+msgid "Trusted reverse proxies"
+msgstr "受信任的反向代理"
+
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:58
+msgid "N/A"
+msgstr "N/A"
+
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:84
+msgid "Visit releases page on Github"
+msgstr "至Github获取最新版本"
+
+#: tmp/server.b91ef64efc3688266305ea9b42e5017e.rtpl.php:121
+msgid "Synchronize all link thumbnails"
+msgstr "同步所有链接中的缩略图"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:2
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:2
+msgid "Permissions"
+msgstr "权限"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:8
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:8
+msgid "There are permissions that need to be fixed."
+msgstr "有需要修复的权限"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:23
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:23
+msgid "All read/write permissions are properly set."
+msgstr "所有读/写权限都已正确设置"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:32
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:32
+msgid "Running PHP"
+msgstr "当前PHP版本: "
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:36
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:36
+msgid "End of life: "
+msgstr "EOL: "
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:48
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:48
+msgid "Extension"
+msgstr "扩展"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:49
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:49
+msgid "Usage"
+msgstr "说明"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:50
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:50
+msgid "Status"
+msgstr "需求"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:51
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:66
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:51
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:66
+msgid "Loaded"
+msgstr "状态"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:60
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:60
+msgid "Required"
+msgstr "必需"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:60
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:60
+msgid "Optional"
+msgstr "可选"
+
+#: tmp/server.requirements.b91ef64efc3688266305ea9b42e5017e.rtpl.php:70
+#: tmp/server.requirements.cedf684561d925457130839629000a81.rtpl.php:70
+msgid "Not loaded"
+msgstr "未加载"
+
+#: tmp/tag.cloud.b91ef64efc3688266305ea9b42e5017e.rtpl.php:19
+#: tmp/tag.list.b91ef64efc3688266305ea9b42e5017e.rtpl.php:19
+msgid "tags"
+msgstr "标签"
+
+#: tmp/tag.cloud.b91ef64efc3688266305ea9b42e5017e.rtpl.php:24
+#: tmp/tag.list.b91ef64efc3688266305ea9b42e5017e.rtpl.php:24
+msgid "List all links with those tags"
+msgstr "列出所有带此标签的链接"
+
+#: tmp/tag.list.b91ef64efc3688266305ea9b42e5017e.rtpl.php:19
+msgid "Tag list"
+msgstr "标签列表"
+
+#: tmp/tag.sort.b91ef64efc3688266305ea9b42e5017e.rtpl.php:3
+#: tmp/tag.sort.cedf684561d925457130839629000a81.rtpl.php:3
+msgid "Sort by:"
+msgstr "分类依据:"
+
+#: tmp/tag.sort.b91ef64efc3688266305ea9b42e5017e.rtpl.php:5
+#: tmp/tag.sort.cedf684561d925457130839629000a81.rtpl.php:5
+msgid "Cloud"
+msgstr "💭 标签云"
+
+#: tmp/tag.sort.b91ef64efc3688266305ea9b42e5017e.rtpl.php:6
+#: tmp/tag.sort.cedf684561d925457130839629000a81.rtpl.php:6
+msgid "Most used"
+msgstr "🔝 最常点选"
+
+#: tmp/tag.sort.b91ef64efc3688266305ea9b42e5017e.rtpl.php:7
+#: tmp/tag.sort.cedf684561d925457130839629000a81.rtpl.php:7
+msgid "Alphabetical"
+msgstr "🅰 A-z字母"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:14
+msgid "Settings"
+msgstr "工具箱"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:16
+msgid "Change Shaarli settings: title, timezone, etc."
+msgstr "更改Shaarli设置: 标题、时区等"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:17
+msgid "Configure your Shaarli"
+msgstr "基本设置"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:21
+msgid "Enable, disable and configure plugins"
+msgstr "启用、禁用和管理插件"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:27
+msgid "Check instance's server configuration"
+msgstr "检查当前服务器配置"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:34
+msgid "Change your password"
+msgstr "建议定期修改密码提升安全性"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:41
+msgid "Rename or delete a tag in all links"
+msgstr "重命名、删除链接中的标签"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:47
+msgid ""
+"Import Netscape HTML bookmarks (as exported from Firefox, Chrome, Opera, "
+"delicious...)"
+msgstr "导入HTML书签 (从火狐、Chrome、Opera、Delicious... )"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:48
+msgid "Import links"
+msgstr "导入链接"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:53
+msgid ""
+"Export Netscape HTML bookmarks (which can be imported in Firefox, Chrome, "
+"Opera, delicious...)"
+msgstr "导出HTML书签 (到火狐、Chrome、Opera、Delicious...)"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:54
+msgid "Export database"
+msgstr "导出数据"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:77
+msgid ""
+"Drag one of these button to your bookmarks toolbar or right-click it and "
+"\"Bookmark This Link\""
+msgstr "拖拽按钮到书签工具栏，或右键收藏此链接"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:78
+msgid "then click on the bookmarklet in any page you want to share."
+msgstr ""
+" \n"
+"然后在任何想分享的页面上点击书签"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:82
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:106
+msgid ""
+"Drag this link to your bookmarks toolbar or right-click it and Bookmark This "
+"Link"
+msgstr "拖拽链接到书签工具栏，或右键收藏此链接"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:83
+msgid "then click ✚Shaare link button in any page you want to share"
+msgstr "然后在任何页面中单击✚Shaare 链接"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:92
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:114
+msgid "The selected text is too long, it will be truncated."
+msgstr "所选文本太长, 将被分段"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:102
+msgid "Shaare link"
+msgstr "分享链接"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:107
+msgid ""
+"Then click ✚Add Note button anytime to start composing a private Note (text "
+"post) to your Shaarli"
+msgstr "然后随时点击✚Add笔记按钮，开始为你的Shaarli撰写私有笔记 (文本备注)"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:123
+msgid "Add Note"
+msgstr "添加笔记"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:132
+msgid "3rd party"
+msgstr "第三方工具"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:135
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:140
+msgid "plugin"
+msgstr "插件"
+
+#: tmp/tools.b91ef64efc3688266305ea9b42e5017e.rtpl.php:165
+msgid ""
+"Drag this link to your bookmarks toolbar, or right-click it and choose "
+"Bookmark This Link"
+msgstr "拖拽链接到书签工具栏, 或右键选择\"将此链接设为书签\""
+
+msgid "Change Title, timezone..."
+msgstr "更改标题、时区..."
+
+msgid "Current version"
+msgstr "当前版本"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Latest release"
+msgstr "最新版本"
+
+msgid "Thumbnails status"
+msgstr "缩略图状态"
+
+msgid "Thumbnails"
+msgstr "缩略图"
+
+msgid "Cache"
+msgstr "缓存"
+
+msgid "Clear thumbnails cache"
+msgstr "清理缩略图缓存"
+
+msgid "Clear main cache"
+msgstr "清理主缓存"
+
+msgid "search"
+msgstr "搜索"
+
+msgid "to the filters"
+msgstr "进一步搜索"
